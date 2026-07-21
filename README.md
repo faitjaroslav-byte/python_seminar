@@ -15,10 +15,10 @@ Otevři `http://127.0.0.1:8000`.
 
 ## Publikování
 
-1. Nahraď `USERNAME` v `mkdocs.yml` svým GitHub uživatelským jménem.
-2. Založ repozitář a odešli větev `main`.
-3. Na GitHubu otevři **Settings → Pages → Source → GitHub Actions**.
-4. Každý další push automaticky publikuje novou verzi.
+1. Ujisti se, že `site_url` a `repo_url` v `mkdocs.yml` odpovídají skutečnému GitHub repozitáři.
+2. Odešli větev `main` na GitHub.
+3. Na GitHubu otevři **Settings → Pages** a nastav **Source** na **GitHub Actions**.
+4. Každý další push do `main` automaticky publikuje novou verzi.
 
 ## Poznámka k obsahu
 

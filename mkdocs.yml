@@ -1,10 +1,10 @@
 site_name: Python pro seminář
 site_description: Online učebnice programování v Pythonu pro střední školu
 site_author: Jaroslav Fait
-site_url: https://USERNAME.github.io/python-seminar/
+site_url: https://faitjaroslav-byte.github.io/python_seminar/
 
-repo_name: python-seminar
-repo_url: https://github.com/USERNAME/python-seminar
+repo_name: python_seminar
+repo_url: https://github.com/faitjaroslav-byte/python_seminar
 edit_uri: edit/main/docs/
 
 theme:
