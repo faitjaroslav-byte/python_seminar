@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1370" viewBox="0 0 1100 1370">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#546e7a"/></marker></defs>
+<style>.t{font:700 22px Arial;fill:#172033}.s{font:17px Arial;fill:#172033}.e{stroke:#546e7a;stroke-width:3;fill:none;marker-end:url(#a)}.lbl{font:15px Arial;fill:#455a64}</style>
+<text x="550" y="32" text-anchor="middle" class="t">Devět životů</text>
+<path d="M550.0,110 L550.0,145" class="e"/>
+<path d="M550.0,215 L550.0,265" class="e"/>
+<path d="M550.0,340 L550.0,390" class="e"/>
+<path d="M550.0,450 L550.0,500" class="e"/>
+<path d="M550.0,595 L550.0,912.5 L230.0,912.5 L230.0,1230" class="e"/>
+<text x="390.0" y="905.5" class="lbl">ano</text>
+<path d="M550.0,595 L550.0,650" class="e"/>
+<text x="558.0" y="622.5" class="lbl">ne</text>
+<path d="M550.0,745 L550.0,772.5 L215.0,772.5 L215.0,800" class="e"/>
+<text x="382.5" y="765.5" class="lbl">ano</text>
+<path d="M550.0,745 L550.0,772.5 L885.0,772.5 L885.0,800" class="e"/>
+<text x="717.5" y="765.5" class="lbl">ne</text>
+<path d="M215.0,870 L215.0,897.5 L550.0,897.5 L550.0,925" class="e"/>
+<path d="M885.0,870 L885.0,970.0 L550.0,970.0 L550.0,1070" class="e"/>
+<path d="M550.0,1020 L550.0,1125.0 L230.0,1125.0 L230.0,1230" class="e"/>
+<text x="390.0" y="1118.0" class="lbl">ano</text>
+<path d="M550.0,1020 L550.0,265" class="e"/>
+<text x="558.0" y="642.5" class="lbl">ne</text>
+<path d="M550.0,1165 L550.0,265" class="e"/>
+<text x="558.0" y="715.0" class="lbl">ano</text>
+<path d="M550.0,1165 L550.0,1197.5 L870.0,1197.5 L870.0,1230" class="e"/>
+<text x="710.0" y="1190.5" class="lbl">ne</text>
+<rect x="440" y="50" width="220" height="60" rx="28" fill="#dff5e8" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="86.0" text-anchor="middle" class="s">Start</text>
+<rect x="420" y="145" width="260" height="70" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="186.0" text-anchor="middle" class="s">Vyber tajné slovo</text>
+<rect x="420" y="265" width="260" height="75" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="298.0" text-anchor="middle" class="s">Zobraz nápovědu</text>
+<text x="550.0" y="319.0" text-anchor="middle" class="s">a počet životů</text>
+<rect x="440" y="390" width="220" height="60" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="426.0" text-anchor="middle" class="s">Načti tip</text>
+<polygon points="550.0,500 680,547.5 550.0,595 420,547.5" fill="#fff4cc" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="543.0" text-anchor="middle" class="s">Je tip celé</text>
+<text x="550.0" y="564.0" text-anchor="middle" class="s">tajné slovo?</text>
+<polygon points="550.0,650 680,697.5 550.0,745 420,697.5" fill="#fff4cc" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="693.0" text-anchor="middle" class="s">Je písmeno</text>
+<text x="550.0" y="714.0" text-anchor="middle" class="s">ve slově?</text>
+<rect x="80" y="800" width="270" height="70" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="215.0" y="830.5" text-anchor="middle" class="s">Doplň písmeno</text>
+<text x="215.0" y="851.5" text-anchor="middle" class="s">do nápovědy</text>
+<rect x="750" y="800" width="270" height="70" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="885.0" y="841.0" text-anchor="middle" class="s">Odeber jeden život</text>
+<polygon points="550.0,925 680,972.5 550.0,1020 420,972.5" fill="#fff4cc" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="978.5" text-anchor="middle" class="s">Je slovo dokončené?</text>
+<polygon points="550.0,1070 680,1117.5 550.0,1165 420,1117.5" fill="#fff4cc" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="1123.5" text-anchor="middle" class="s">Zbývají životy?</text>
+<rect x="120" y="1230" width="220" height="60" rx="28" fill="#ffe3e3" stroke="#1565c0" stroke-width="2"/>
+<text x="230.0" y="1266.0" text-anchor="middle" class="s">Výhra</text>
+<rect x="760" y="1230" width="220" height="60" rx="28" fill="#ffe3e3" stroke="#1565c0" stroke-width="2"/>
+<text x="870.0" y="1266.0" text-anchor="middle" class="s">Prohra</text>
+</svg>

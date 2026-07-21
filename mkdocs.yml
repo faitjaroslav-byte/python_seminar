@@ -1,0 +1,90 @@
+site_name: Python pro seminář
+site_description: Online učebnice programování v Pythonu pro střední školu
+site_author: Jaroslav Fait
+site_url: https://USERNAME.github.io/python-seminar/
+
+repo_name: python-seminar
+repo_url: https://github.com/USERNAME/python-seminar
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: cs
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Přepnout na tmavý režim
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Přepnout na světlý režim
+
+nav:
+  - Úvod:
+      - O učebnici: index.md
+      - Jak pracovat s kurzem: 00-jak-pracovat/index.md
+  - Základy Pythonu:
+      - 1. Vývojové prostředí: 01-vyvojove-prostredi/index.md
+      - 2. První program: 02-prvni-program/index.md
+      - 3. Proměnné a vstup: 03-promenne-a-vstup/index.md
+      - 4. Řetězce a seznamy: 04-retezce-a-seznamy/index.md
+      - 5. Rozhodování: 05-rozhodovani/index.md
+      - 6. Cykly: 06-cykly/index.md
+      - 7. Projekt Zvířecí kvíz: 07-zvireci-kviz/index.md
+      - 8. Funkce: 08-funkce/index.md
+      - 9. Hledání a oprava chyb: 09-oprava-chyb/index.md
+      - 10. Projekt Generátor hesel: 10-generator-hesel/index.md
+      - 11. Moduly: 11-moduly/index.md
+      - 12. Projekt Devět životů: 12-devet-zivotu/index.md
+  - Turtle Graphics:
+      - 13. Úvod do Turtle: 13-turtle-uvod/index.md
+      - 14. Projekt Stavitel robota: 14-stavitel-robota/index.md
+      - 15. Projekt Kaleido-spirála: 15-kaleido-spirala/index.md
+      - 16. Projekt Hvězdná noc: 16-hvezdna-noc/index.md
+      - 17. Projekt Mutantní duha: 17-mutantni-duha/index.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: cs
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+copyright: Materiál pro výuku Pythonu

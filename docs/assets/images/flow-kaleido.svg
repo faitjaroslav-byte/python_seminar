@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1050" viewBox="0 0 1100 1050">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#546e7a"/></marker></defs>
+<style>.t{font:700 22px Arial;fill:#172033}.s{font:17px Arial;fill:#172033}.e{stroke:#546e7a;stroke-width:3;fill:none;marker-end:url(#a)}.lbl{font:15px Arial;fill:#455a64}</style>
+<text x="550" y="32" text-anchor="middle" class="t">Kaleido-spirála</text>
+<path d="M550.0,110 L550.0,145" class="e"/>
+<path d="M550.0,225 L550.0,285" class="e"/>
+<path d="M550.0,350 L550.0,400" class="e"/>
+<path d="M550.0,465 L550.0,515" class="e"/>
+<path d="M550.0,580 L550.0,630" class="e"/>
+<path d="M550.0,705 L550.0,760" class="e"/>
+<path d="M550.0,855 L550.0,285" class="e"/>
+<text x="558.0" y="570.0" class="lbl">ne</text>
+<path d="M550.0,855 L550.0,910" class="e"/>
+<text x="558.0" y="882.5" class="lbl">ano</text>
+<rect x="440" y="50" width="220" height="60" rx="28" fill="#dff5e8" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="86.0" text-anchor="middle" class="s">Start</text>
+<rect x="410" y="145" width="280" height="80" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="180.5" text-anchor="middle" class="s">Nastav pozadí,</text>
+<text x="550.0" y="201.5" text-anchor="middle" class="s">rychlost a hodnoty</text>
+<rect x="420" y="285" width="260" height="65" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="323.5" text-anchor="middle" class="s">Vyber novou barvu</text>
+<rect x="420" y="400" width="260" height="65" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="438.5" text-anchor="middle" class="s">Nakresli kružnici</text>
+<rect x="420" y="515" width="260" height="65" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="553.5" text-anchor="middle" class="s">Otoč a posuň želvu</text>
+<rect x="420" y="630" width="260" height="75" rx="10" fill="#eef6ff" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="663.0" text-anchor="middle" class="s">Zvětši velikost,</text>
+<text x="550.0" y="684.0" text-anchor="middle" class="s">úhel a posun</text>
+<polygon points="550.0,760 680,807.5 550.0,855 420,807.5" fill="#fff4cc" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="813.5" text-anchor="middle" class="s">Byl program ukončen?</text>
+<rect x="440" y="910" width="220" height="60" rx="28" fill="#ffe3e3" stroke="#1565c0" stroke-width="2"/>
+<text x="550.0" y="946.0" text-anchor="middle" class="s">Konec</text>
+</svg>
