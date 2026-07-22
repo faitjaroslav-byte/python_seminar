@@ -2,94 +2,127 @@
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 60 minut<br>
-<strong>Výstup lekce:</strong> Student rozumí textu jako retezci, seznamu hodnot a náhodněmu výběru prvku.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, navaznost na praci s textem a vyberem hodnot
+<strong>Výstup lekce:</strong> Student uloží text do proměnné, spojí řetězce, zjistí délku řetězce a vytvoří seznam hodnot.<br>
+<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 26-27, části Working with strings a Lists
 </div>
 
 ## Co se dnes naučíš
 
-- zjistit délku textu pomocí len()
-- vybrat znak nebo prvek podle indexu
-- vytvořít seznam
-- vybrat nahodnou polozku ze seznamu
+- vysvětlit řetězec jako posloupnost znaků
+- uložit řetězec do proměnné
+- spojit dva řetězce pomocí `+`
+- použít funkci `len()`
+- uložit více hodnot do seznamu
+- vybrat položku ze seznamu podle pozice
 
 ## Proč to potřebujeme
 
-Pro další projekty je potreba pracovat s více moznostmi: slovy, odpověďmi, predmety nebo barvami. Seznam je jednoduchy zpusob, jak je mit pohromade.
+Program často nepracuje jen s čísly. Potřebuje si pamatovat jména, zprávy, věty nebo celé sady hodnot. Přesně to řeší řetězce a seznamy na stranách 26-27.
 
 !!! info "Důležitá myšlenka"
-    Retezec je řada znaků. Seznam je řada hodnot. V obou pripadech Python pocita pozice od nuly.
+    Řetězec je posloupnost znaků. Seznam je uspořádaná sada položek. U seznamu Python počítá pozice od nuly.
 
-## Analýza problému
+## Práce s řetězci
 
-- program připraví text a seznam
-- z textu zjisti délku a první znak
-- ze seznamu vybere druhý prvek
-- náhodně vybere jedno zvire
+Řetězec může být slovo, věta, jméno nebo libovolná zpráva. V Pythonu musí být začátek a konec řetězce označený uvozovkami.
 
-## Schéma průběhu
+### Řetězec v proměnné
 
-![Lekce 4 - Řetězce a seznamy - schéma průběhu](images/flowchart.svg){ .flowchart }
+```python title="code/01_strings.py" linenums="1"
+name = "Ally Alien"
+print(name)
 
-## Ukázkový program
+greeting = "Welcome to Earth, "
+message = greeting + name
+print(message)
 
-```python title="code/seznamy.py" linenums="1"
-from random import choice
-
-word = "python"
-animals = ["pes", "kocka", "sova", "had"]
-
-print(len(word))
-print(word[0])
-print(animals[1])
-print(choice(animals))
+print(len(message))
 ```
-
-[Stáhnout soubor `seznamy.py`](code/seznamy.py){ .md-button .md-button--primary }
-
-## Rozbor programu
 
 | Část programu | Význam |
 | --- | --- |
-| `word[0]` | první znak, protoze indexovani začíná nulou |
-| `animals[1]` | druha polozka seznamu |
-| `choice(animals)` | náhodný výběr jedne polozky |
+| `name = "Ally Alien"` | uloží řetězec do proměnné `name` |
+| `print(name)` | vypíše uloženou hodnotu |
+| `greeting + name` | spojí dva řetězce dohromady |
+| `message` | uloží spojený řetězec |
+| `len(message)` | spočítá počet znaků včetně mezer |
+
+!!! tip "Délka řetězce"
+    `len()` je vestavěná funkce. Ve skenu počítá délku zprávy `Welcome to Earth, Ally Alien`, včetně mezer a čárky.
+
+## Seznamy
+
+Když potřebuješ uložit hodně dat najednou nebo zachovat jejich pořadí, použiješ seznam. Seznam je uložený v jedné proměnné a položky jsou zapsané v hranatých závorkách.
+
+### Mnoho samostatných proměnných
+
+Kdyby měl tým jen tři hráče, šlo by jména zapsat do tří proměnných.
+
+```python
+rockets_player_1 = "Rory"
+rockets_player_2 = "Rav"
+rockets_player_3 = "Rachel"
+```
+
+U šesti hráčů už je přehlednější použít seznam.
+
+```python title="code/02_lists.py" linenums="1"
+rockets_players = ["Rory", "Rav", "Rachel", "Renata", "Ryan", "Ruby"]
+planets_players = ["Peter", "Pablo", "Polly", "Penny", "Paula", "Patrick"]
+
+print(rockets_players[0])
+print(planets_players[5])
+```
+
+| Část programu | Význam |
+| --- | --- |
+| `[...]` | hranaté závorky tvoří seznam |
+| čárky | oddělují položky seznamu |
+| `rockets_players[0]` | vybere první položku: `Rory` |
+| `planets_players[5]` | vybere šestou položku: `Patrick` |
+
+!!! warning "Pozice začínají nulou"
+    První položka seznamu má pozici `0`. Proto je šestá položka na pozici `5`.
 
 ## Zkus změnit
 
-- Přidej do seznamu další zvire.
-- Změň index na `animals[0]` a potom na `animals[3]`.
-- Zkus index, ktery v seznamu neexistuje.
+- Změň jméno v proměnné `name`.
+- Uprav text v proměnné `greeting` a sleduj změnu výsledné zprávy.
+- Přidej další jméno do seznamu `rockets_players`.
+- Vyber ze seznamu jinou položku a ověř, že počítáš od nuly.
 
 ## Časté chyby
 
-!!! warning "Častá chyba: Index je moc velky"
-    **Proč vznikne:** Seznam nema tolik polozek.
+!!! warning "Častá chyba: Chybí uvozovky u řetězce"
+    **Proč vznikne:** Python pak chápe text jako název proměnné.
 
-    **Oprava:** Zkontroluj délku seznamu a pamatuj, ze první index je 0.
+    **Oprava:** Text zapisuj do uvozovek, například `"Ally Alien"`.
 
-!!! warning "Častá chyba: Chybi hranate zavorky seznamu"
-    **Proč vznikne:** Python nepozna, kde seznam začíná a konci.
+!!! warning "Častá chyba: Špatný index seznamu"
+    **Proč vznikne:** Python počítá od nuly, ne od jedničky.
 
-    **Oprava:** Polozky zápis mezi `[` a `]`.
+    **Oprava:** Pro první položku použij `[0]`, pro druhou `[1]`.
 
 ## Tahák
 
 | Zápis | K čemu slouží |
 | --- | --- |
-| `len(x)` | délka textu nebo seznamu |
-| `x[0]` | první prvek |
-| `[a, b, c]` | seznam hodnot |
-| `choice(seznam)` | náhodný prvek |
+| `"Ally Alien"` | řetězec |
+| `name = "Ally Alien"` | řetězec uložený v proměnné |
+| `greeting + name` | spojení řetězců |
+| `len(message)` | délka řetězce |
+| `players = ["Rory", "Rav"]` | seznam |
+| `players[0]` | první položka seznamu |
 
 ## Co už umím
 
 - [ ] vím, co je řetězec
-- [ ] umím vytvořít seznam
-- [ ] rozumím indexu 0
-- [ ] umím použít náhodný výběr
+- [ ] umím spojit dva řetězce
+- [ ] umím použít `len()`
+- [ ] umím vytvořit seznam
+- [ ] umím vybrat položku seznamu podle pozice
 
 ## Shrnutí
 
 !!! success "Zapamatuj si"
-    Řetězce a seznamy připravuji cestu k hram a generátorum, kde program vybira z více hodnot.
+    Řetězce ukládají text. Seznamy ukládají více hodnot najednou. U seznamů vždy počítej pozice od nuly.

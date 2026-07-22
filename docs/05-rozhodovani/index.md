@@ -1,95 +1,177 @@
 # Lekce 5 - Rozhodování
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 60 minut<br>
-<strong>Výstup lekce:</strong> Student zápise podminku if/elif/else a umí vysvětlit větveni programu.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, část Making decisions
+<strong>Doporučený čas:</strong> 75-90 minut<br>
+<strong>Výstup lekce:</strong> Student použije porovnání, booleovské hodnoty a větvení `if`, `else` a `elif` podle ukázek ze skenu.<br>
+<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 28-31, kapitola Making decisions
 </div>
 
 ## Co se dnes naučíš
 
-- porovnat hodnoty pomocí operatoru
-- použít if a else
-- přidat další větev elif
-- cist odsazeny blok kódu
+- porovnat dvě hodnoty
+- rozpoznat hodnoty `True` a `False`
+- použít logické operátory `and` a `or`
+- zapsat jednoduchou podmínku `if`
+- přidat druhou větev pomocí `else`
+- zapsat více větví pomocí `elif`
 
 ## Proč to potřebujeme
 
-V PDF se program začíná rozhodovat podle situace: jina odpověď, jine skóre, jina zprava. To je první krok od pevného scenare k interaktivnimu programu.
+Každý den děláš rozhodnutí podle odpovědí na otázky: je venku tma, prší, mám dost let nebo jsem dost vysoký? Program se rozhoduje podobně. Nejprve porovná hodnoty a podle výsledku vykoná určitou část kódu.
 
 !!! info "Důležitá myšlenka"
-    Podminka je otázka s odpovědi ano/ne. Podle odpovědi Python vybere, ktery odsazeny blok provede.
+    Výsledek porovnání je booleovská hodnota: buď `True`, nebo `False`.
 
-## Analýza problému
+## Otázky, které porovnávají
 
-- vstupem je počet bodu
-- program porovna body s hranicemi
-- provede prave jednu odpovidajici větev
-- výstupem je slovni hodnoceni
+Počítač může porovnat dvě hodnoty. Výsledek si můžeš uložit do proměnné nebo rovnou vypsat.
 
-## Schéma průběhu
+```python title="code/01_booleans.py" linenums="1"
+answer_one = True
+answer_two = False
 
-![Lekce 5 - Rozhodování - schéma průběhu](images/flowchart.svg){ .flowchart }
-
-## Ukázkový program
-
-```python title="code/rozhodovani.py" linenums="1"
-score = int(input("Pocet bodu: "))
-
-if score >= 9:
-    print("Vyborne")
-elif score >= 5:
-    print("Dobre")
-else:
-    print("Zkus to znovu")
+print(answer_one)
+print(answer_two)
 ```
 
-[Stáhnout soubor `rozhodovani.py`](code/rozhodovani.py){ .md-button .md-button--primary }
+| Hodnota | Význam |
+| --- | --- |
+| `True` | podmínka platí |
+| `False` | podmínka neplatí |
 
-## Rozbor programu
+## Operátory porovnání
+
+Ve skenu jsou porovnání vysvětlena na věku a také na ananasech a zebrách.
+
+```python title="code/02_comparisons.py" linenums="1"
+age = 10
+print(age == 10)
+print(age < 10)
+
+pineapples = 5
+zebras = 2
+print(pineapples > zebras)
+print(zebras > pineapples)
+print((pineapples == 3) and (zebras == 2))
+print((pineapples == 3) or (zebras == 2))
+```
+
+| Operátor | Význam |
+| --- | --- |
+| `==` | rovná se |
+| `!=` | nerovná se |
+| `<` | menší než |
+| `>` | větší než |
+| `<=` | menší nebo rovno |
+| `>=` | větší nebo rovno |
+
+!!! warning "Jedno a dvě rovnítka"
+    `=` přiřazuje hodnotu do proměnné. `==` porovnává dvě hodnoty.
+
+## Jízda na horské dráze
+
+Na straně 31 se rozhoduje, jestli dítě splňuje dvě podmínky: věk a výšku.
+
+```python title="code/03_rollercoaster.py" linenums="1"
+age = 10
+height = 60
+
+if (age > 8) and (height > 55):
+    print("You can go on the ride.")
+```
+
+Blok pod `if` se spustí jen tehdy, když jsou obě části podmínky pravdivé.
+
+## Jedna větev, nebo druhá
+
+Když program potřebuje udělat jednu věc při pravdivé podmínce a jinou věc při nepravdivé podmínce, použije `else`.
+
+```python title="code/04_branches.py" linenums="1"
+is_dark = input("Is it dark outside? y/n ")
+
+if is_dark == "y":
+    print("Goodnight! Zzzzzzzzz")
+else:
+    print("Coding time!")
+
+tentacles = input("Do you have tentacles? y/n ")
+
+if tentacles == "y":
+    print("I never knew octopuses could type!")
+else:
+    print("Greetings, human!")
+```
 
 | Část programu | Význam |
 | --- | --- |
-| `if score >= 9:` | první test |
-| `elif score >= 5:` | další moznost, kdyz první neplati |
-| `else:` | všechny zbyvajici pripady |
-| odsazení | oznacuje příkazy uvnitr větve |
+| `input(...)` | načte odpověď uživatele |
+| `if is_dark == "y":` | testuje, zda uživatel odpověděl `y` |
+| odsazený blok | spustí se, když je podmínka pravdivá |
+| `else:` | spustí se, když podmínka pravdivá není |
+
+## Více větví
+
+Když jsou možnosti více než dvě, použiješ `elif`. Sken ukazuje příklad s předpovědí počasí.
+
+```python title="code/05_weather.py" linenums="1"
+weather = input("What is the forecast for today? (rain/snow/sun) ")
+
+if weather == "rain":
+    print("Remember your umbrella!")
+elif weather == "snow":
+    print("Remember your woolly gloves!")
+else:
+    print("Remember your sunglasses!")
+```
+
+Python zkouší podmínky shora dolů. Jakmile najde první pravdivou větev, spustí její blok a ostatní větve přeskočí.
 
 ## Zkus změnit
 
-- Otestuj hodnoty 10, 9, 8, 5, 4 a 0.
-- Změň hranici pro vyborne hodnoceni.
-- Přidej větev pro plny počet bodu.
+- V příkladu s věkem změň hodnotu `age` a sleduj výsledek.
+- Změň počet ananasů nebo zeber a znovu vyhodnoť porovnání.
+- U horské dráhy nastav výšku pod 55 a vysvětli, proč se zpráva nevypíše.
+- V příkladu s počasím přidej další možnost, například `wind`.
 
 ## Časté chyby
 
-!!! warning "Častá chyba: Chybi dvojtecka"
-    **Proč vznikne:** Radek s if/elif/else musi koncit dvojteckou.
+!!! warning "Častá chyba: `=` místo `==`"
+    **Proč vznikne:** Jedno rovnítko ukládá hodnotu, dvě rovnítka porovnávají.
 
-    **Oprava:** Doplň `:` za podminku.
+    **Oprava:** V podmínce piš například `age == 10`.
 
-!!! warning "Častá chyba: Spatne odsazení"
-    **Proč vznikne:** Python nevi, ktere příkazy patri do větve.
+!!! warning "Častá chyba: Chybí dvojtečka"
+    **Proč vznikne:** Řádek s `if`, `elif` nebo `else` otevírá blok.
 
-    **Oprava:** Odsad příkazy ve vetvi stejne.
+    **Oprava:** Na konec řádku napiš `:`.
+
+!!! warning "Častá chyba: Špatné odsazení"
+    **Proč vznikne:** Python podle odsazení pozná, co patří do větve.
+
+    **Oprava:** Příkazy uvnitř větve odsaď stejně.
 
 ## Tahák
 
 | Zápis | K čemu slouží |
 | --- | --- |
-| `if podmínka:` | první rozhodnuti |
-| `elif podmínka:` | další moznost |
-| `else:` | zbyvajici pripady |
-| `>=` | větší nebo rovno |
+| `True` / `False` | pravda / nepravda |
+| `==` | porovnání rovnosti |
+| `and` | musí platit obě podmínky |
+| `or` | stačí jedna pravdivá podmínka |
+| `if podmínka:` | první větev |
+| `else:` | větev pro ostatní případy |
+| `elif podmínka:` | další testovaná možnost |
 
 ## Co už umím
 
-- [ ] umím zapsat podminku
+- [ ] umím porovnat dvě hodnoty
+- [ ] rozumím hodnotám `True` a `False`
+- [ ] umím použít `and` a `or`
+- [ ] umím zapsat `if`
 - [ ] rozumím odsazení bloku
-- [ ] umím použít else
-- [ ] umím vysvětlit větveni podle flowchartu
+- [ ] umím použít `else` a `elif`
 
 ## Shrnutí
 
 !!! success "Zapamatuj si"
-    Rozhodování mění program z pevné posloupnosti na algoritmus, ktery reaguje na data.
+    Rozhodování začíná otázkou, která má výsledek `True` nebo `False`. Podle výsledku Python spustí odpovídající odsazený blok.
