@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 730" role="img" aria-labelledby="title desc">
-  <title id="title">Lekce 3 - Promenne a vstup</title>
-  <desc id="desc">Zjednodušené schéma průběhu lekce.</desc>
+  <title id="title">Lekce 3 - Proměnné</title>
+  <desc id="desc">Schéma ukazuje, jak proměnná dostane jméno, hodnotu a později se použije v programu.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#33658a" />
@@ -13,19 +13,19 @@
     </style>
   </defs>
   <rect class="box" x="230" y="21" width="300" height="68" />
-  <text class="text" x="380" y="55">Start</text>
+  <text class="text" x="380" y="55">Vymysli jméno</text>
   <path class="line" d="M380,91 L380,134" />
   <rect class="box" x="230" y="141" width="300" height="68" />
-  <text class="text" x="380" y="175">Nacti jmeno</text>
+  <text class="text" x="380" y="175">Přiřaď hodnotu</text>
   <path class="line" d="M380,211 L380,254" />
   <rect class="box" x="230" y="261" width="300" height="68" />
-  <text class="text" x="380" y="295">Nacti vek</text>
+  <text class="text" x="380" y="295">Ulož do proměnné</text>
   <path class="line" d="M380,331 L380,374" />
   <rect class="box" x="230" y="381" width="300" height="68" />
-  <text class="text" x="380" y="415">Vypis pozdrav</text>
+  <text class="text" x="380" y="415">Použij ve výpočtu</text>
   <path class="line" d="M380,451 L380,494" />
   <rect class="box" x="230" y="501" width="300" height="68" />
-  <text class="text" x="380" y="535">Vypocitej vek za rok</text>
+  <text class="text" x="380" y="535">Vypiš nebo vyber část</text>
   <path class="line" d="M380,571 L380,614" />
   <rect class="box" x="230" y="621" width="300" height="68" />
   <text class="text" x="380" y="655">Konec</text>

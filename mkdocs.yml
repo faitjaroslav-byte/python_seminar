@@ -44,7 +44,7 @@ nav:
   - Základy Pythonu:
       - 1. Vývojové prostředí: 01-vyvojove-prostredi/index.md
       - 2. První program: 02-prvni-program/index.md
-      - 3. Proměnné a vstup: 03-promenne-a-vstup/index.md
+      - 3. Proměnné: 03-promenne-a-vstup/index.md
       - 4. Řetězce a seznamy: 04-retezce-a-seznamy/index.md
       - 5. Rozhodování: 05-rozhodovani/index.md
       - 6. Cykly: 06-cykly/index.md
