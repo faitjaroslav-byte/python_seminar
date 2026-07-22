@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 730" role="img" aria-labelledby="title desc">
+  <title id="title">Lekce 4 - Retezce a seznamy</title>
+  <desc id="desc">Zjednodušené schéma průběhu lekce.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#33658a" />
+    </marker>
+    <style>
+      .box { fill: #eef7fb; stroke: #33658a; stroke-width: 2; rx: 14; }
+      .decision { fill: #fff4d6; stroke: #d18b00; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #102a43; text-anchor: middle; dominant-baseline: middle; }
+      .line { stroke: #33658a; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="box" x="230" y="21" width="300" height="68" />
+  <text class="text" x="380" y="55">Start</text>
+  <path class="line" d="M380,91 L380,134" />
+  <rect class="box" x="230" y="141" width="300" height="68" />
+  <text class="text" x="380" y="175">Priprav text</text>
+  <path class="line" d="M380,211 L380,254" />
+  <rect class="box" x="230" y="261" width="300" height="68" />
+  <text class="text" x="380" y="295">Priprav seznam</text>
+  <path class="line" d="M380,331 L380,374" />
+  <rect class="box" x="230" y="381" width="300" height="68" />
+  <text class="text" x="380" y="415">Vyber hodnoty</text>
+  <path class="line" d="M380,451 L380,494" />
+  <rect class="box" x="230" y="501" width="300" height="68" />
+  <text class="text" x="380" y="535">Vypis vysledky</text>
+  <path class="line" d="M380,571 L380,614" />
+  <rect class="box" x="230" y="621" width="300" height="68" />
+  <text class="text" x="380" y="655">Konec</text>
+</svg>

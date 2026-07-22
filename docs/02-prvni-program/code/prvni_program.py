@@ -1,3 +1,3 @@
-# První program
-print("Ahoj světe!")
-print("Učím se Python.")
+# Prvni program
+print("Ahoj, svete!")
+print("Ucim se Python.")

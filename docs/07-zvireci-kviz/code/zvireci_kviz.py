@@ -1,26 +1,26 @@
 score = 0
 
-print("Zvířecí kvíz")
+print("Zvireci kviz")
 
-answer = input("Které zvíře říká mňau? ").lower()
-if answer == "kočka":
-    print("Správně!")
-    score += 1
+answer = input("Ktere zvire rika mnau? ").lower()
+if answer == "kocka":
+    print("Spravne!")
+    score = score + 1
 else:
-    print("Špatně. Správná odpověď je kočka.")
+    print("Spatne. Spravna odpoved je kocka.")
 
-answer = input("Kolik nohou má pavouk? ")
+answer = input("Kolik nohou ma pavouk? ")
 if answer == "8":
-    print("Správně!")
-    score += 1
+    print("Spravne!")
+    score = score + 1
 else:
-    print("Špatně. Pavouk má 8 nohou.")
+    print("Spatne. Pavouk ma 8 nohou.")
 
-answer = input("Který savec umí létat? ").lower()
-if answer == "netopýr":
-    print("Správně!")
-    score += 1
+answer = input("Ktery savec umi letat? ").lower()
+if answer == "netopyr":
+    print("Spravne!")
+    score = score + 1
 else:
-    print("Špatně. Je to netopýr.")
+    print("Spatne. Je to netopyr.")
 
-print("Tvoje skóre je", score, "ze 3.")
+print("Tvoje skore je", score, "ze 3.")

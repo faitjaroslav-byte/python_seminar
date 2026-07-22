@@ -4,7 +4,6 @@ lives = 9
 words = ["pizza", "fairy", "teeth", "shirt", "otter", "plane"]
 secret_word = random.choice(words)
 clue = list("?????")
-heart_symbol = "♥"
 guessed_word_correctly = False
 
 def update_clue(guessed_letter, secret_word, clue):
@@ -12,11 +11,11 @@ def update_clue(guessed_letter, secret_word, clue):
     while index < len(secret_word):
         if guessed_letter == secret_word[index]:
             clue[index] = guessed_letter
-        index += 1
+        index = index + 1
 
 while lives > 0:
     print(clue)
-    print("Lives left:", heart_symbol * lives)
+    print("Lives left:", "<3 " * lives)
     guess = input("Guess a letter or the whole word: ")
 
     if guess == secret_word:
@@ -27,7 +26,7 @@ while lives > 0:
         update_clue(guess, secret_word, clue)
     else:
         print("Incorrect. You lose a life.")
-        lives -= 1
+        lives = lives - 1
 
     if "?" not in clue:
         guessed_word_correctly = True

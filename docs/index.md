@@ -1,24 +1,33 @@
-# Python pro seminář
+# Python pro seminar
 
-Tato učebnice vede od prvního programu až k samostatným projektům.
-Obsah je určen pro práci ve škole i pro domácí opakování.
+<div class="lesson-meta">
+<strong>Charakter kurzu:</strong> moderní webova učebnice podle PDF předloh Python-first steps-p.51 a Python_52-107<br>
+<strong>Pro koho:</strong> studenti stredni skoly, kteri s Pythonem začínáji nebo si potrebuji upevnit základy
+</div>
 
-## Jak je kurz uspořádán
+## Jak je kurz uspořadan
 
-1. Nejprve si osvojíš základní příkazy, proměnné, větvení, cykly a funkce.
-2. Následují textové projekty, ve kterých propojíš více dovedností.
-3. Druhá část používá modul `turtle` pro tvorbu grafiky.
+Kurz je vedený projektově. Nejdrive se naučíš psat a spouštět krátké programy, potom do nich přidás proměnné, vstup, rozhodování a cykly. Jakmile jsou základy dostatečně pevné, přijde řada na projekty z PDF: kvíz, generátor hesel, hra Devět životů a grafické programy v Turtle.
 
-!!! info "Důležitý princip"
-    U každého projektu nejprve analyzujeme problém a vytvoříme logické schéma.
-    Kód píšeme až poté.
+!!! info "Hlavni pravidlo"
+    Tato webova verze mění formu, ne pořadí výuky. Struktura, navaznost a projekty vychazeji z dodanych PDF materialu.
 
-## Projekty v této verzi
+## Jak pracovat s lekci
 
-- Zvířecí kvíz
-- Generátor hesel
-- Devět životů
-- Stavitel robota
-- Kaleido-spirála
-- Hvězdná noc
-- Mutantní duha
+1. Nejdrive si přečti cil a analyzu problemu.
+2. Podivej se na schéma průběhu a zkus rict algoritmus vlastními slovy.
+3. Spust ukazkovy kód ze složky `code/`.
+4. Projdi rozbor programu a uprav jednu malou část.
+5. Na konci si odskrtni checklist.
+
+## Projekty v teto verzi
+
+| Projekt | Co procvicuje |
+| --- | --- |
+| Zvířecí kvíz | vstup, podmínky, skóre |
+| Generátor hesel | seznamy, nahoda, řetězce, cyklus |
+| Devět životů | stav hry, funkce, cyklus, rozhodování |
+| Stavitel robota | turtle, funkce, souřadnice, výplněne tvary |
+| Kaleido-spirála | opakování, náhodně barvy, parametry kresby |
+| Hvězdná noc | funkce s parametry, náhodně pozice |
+| Mutantní duha | vstup uživatele, turtle, nahoda, hranice plátna |

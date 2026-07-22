@@ -81,8 +81,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - search:
-      lang: cs
+  - search
 
 extra_css:
   - assets/stylesheets/extra.css

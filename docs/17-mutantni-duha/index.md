@@ -1,60 +1,42 @@
-# 17. Projekt Mutantní duha
+# Lekce 17 - Projekt Mutantní duha
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Mutantní duha**.
+<strong>Doporučený čas:</strong> 90-120 minut<br>
+<strong>Výstup lekce:</strong> Student vytvoří nahodnou barevnou kresbu, jejiz parametry predem zvoli uživatel.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, zaverecny turtle projekt Mutant Rainbow
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Program kreslí barevné čáry v náhodných směrech. Uživatel předem zvolí délku a šířku čar. Když želva opustí vymezenou oblast, přesune se na náhodné místo.
-</div>
+## Co se dnes naučíš
+
+- načíst volbu uživatele
+- převést volbu na parametr kreslení
+- kreslít náhodně smerovane cary
+- hlidat hranice kreslíci oblasti
+
+## Proč to potřebujeme
+
+Zaverecny projekt PDF propojuje interaktivni vstup s grafickou nahodou. Student uz nepise jen obrázek, ale program s nastavěním.
+
+!!! info "Důležitá myšlenka"
+    Program nejprve zjisti pravidla kresby od uživatele. Potom v cyklu kreslí cary, mění barvu a smer a hlida, zda se želva neztratila mimo oblast.
+
+!!! example "Projekt podle PDF"
+    Student vytvoří nahodnou barevnou kresbu, jejiz parametry predem zvoli uživatel.
 
 ## Analýza projektu
 
-### Vstupy
+- vstupem je délka a šířka cary
+- funkce vraci číselnou hodnotu podle textove volby
+- každý krok vybere nahodnou barvu a smer
+- pri opusteni oblasti se želva presune zpet na náhodně místo
 
-- zvolená délka a šířka čáry.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 17 - Projekt Mutantní duha - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- funkce načítají délku a šířku
-- barva se volí náhodně
-- směr se mění po každé čáře
-- souřadnice hlídají hranice kreslicí oblasti
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Mutantní duha](../assets/images/flow-rainbow.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="mutantni_duha.py" linenums="1"
+```python title="code/mutantni_duha.py" linenums="1"
 import turtle as t
 from random import randint
 
@@ -97,9 +79,50 @@ while True:
 
 [Stáhnout soubor `mutantni_duha.py`](code/mutantni_duha.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `get_line_length()` | prevadi textovou volbu na číslo |
+| `t.pensize(line_width)` | nastavi šířku cary |
+| `t.position()` | zjisti aktuální souřadnice |
+| hranice `300` | jednoduche omezeni kreslíci oblasti |
+
+## Zkus změnit
+
+- Přidej další volbu délky.
+- Změň hranici z 300 na 200.
+- Nastav pevnou barvu a porovnej obraz s náhodnými barvami.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Volba uživatele nema efekt"
+    **Proč vznikne:** Funkce vraci stale stejnou hodnotu.
+
+    **Oprava:** Zkontroluj return v kazde vetvi.
+
+!!! warning "Častá chyba: Zelva utece mimo obraz"
+    **Proč vznikne:** Chybi kontrola souřadnic.
+
+    **Oprava:** Použij `t.position()` a podminku hranic.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `return` | hodnota z funkce |
+| `t.position()` | aktuální souřadnice |
+| `or` | plati alespoň jedna část podmínky |
+| `randint(1, 360)` | náhodný smer |
+
+## Co už umím
+
+- [ ] umím načíst parametry kreslení
+- [ ] umím je použít v turtle programu
+- [ ] umím hlidat hranice oblasti
+- [ ] umím vysvětlit hlavní cyklus projektu
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Mutantní duha uz kombinuje všechny hlavní dovednosti kurzu: vstup, funkce, rozhodování, cykly, moduly, náhodu a grafiku.

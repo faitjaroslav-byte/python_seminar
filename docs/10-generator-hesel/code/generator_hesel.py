@@ -1,10 +1,10 @@
 import random
 import string
 
-adjectives = ["sleepy", "slow", "smelly", "wet", "fat", "red", "orange", "yellow", "green", "blue", "purple", "fluffy", "white", "proud", "brave"]
-nouns = ["apple", "dinosaur", "ball", "toaster", "goat", "dragon", "hammer", "duck", "panda"]
+adjectives = ["sleepy", "slow", "red", "green", "brave", "proud"]
+nouns = ["apple", "dinosaur", "panda", "rocket", "dragon"]
 
-print("Welcome to Password Picker!")
+print("Password Picker")
 
 while True:
     adjective = random.choice(adjectives)

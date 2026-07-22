@@ -1,60 +1,36 @@
 import turtle as t
 
 t.speed("fastest")
-t.bgcolor("Dodger blue")
+t.hideturtle()
 
-def rectangle(horizontal, vertical, color):
-    t.pendown()
-    t.pensize(1)
-    t.color(color)
+def rectangle(width, height, color):
+    t.fillcolor(color)
     t.begin_fill()
-    for _ in range(2):
-        t.forward(horizontal)
+    for side in range(2):
+        t.forward(width)
         t.right(90)
-        t.forward(vertical)
+        t.forward(height)
         t.right(90)
     t.end_fill()
+
+def move_to(x, y):
     t.penup()
+    t.goto(x, y)
+    t.pendown()
 
-# Feet
-t.goto(-100, -150)
-rectangle(50, 20, "blue")
-t.goto(-30, -150)
-rectangle(50, 20, "blue")
+move_to(-60, 80)
+rectangle(120, 80, "steelblue")
+move_to(-35, -5)
+rectangle(70, 95, "gray")
+move_to(-70, -25)
+rectangle(30, 90, "orange")
+move_to(40, -25)
+rectangle(30, 90, "orange")
+move_to(-25, 95)
+t.dot(16, "white")
+move_to(25, 95)
+t.dot(16, "white")
+move_to(-25, 45)
+rectangle(50, 10, "black")
 
-# Legs
-t.goto(-75, -50)
-rectangle(15, 100, "grey")
-t.goto(-10, -50)
-rectangle(15, 100, "grey")
-
-# Body
-t.goto(-90, 100)
-rectangle(100, 150, "red")
-
-# Arms
-t.goto(-150, 70)
-rectangle(60, 15, "grey")
-t.goto(10, 70)
-rectangle(60, 15, "grey")
-
-# Neck
-t.goto(-50, 120)
-rectangle(15, 20, "grey")
-
-# Head
-t.goto(-85, 170)
-rectangle(80, 50, "red")
-
-# Eyes
-t.goto(-60, 160)
-rectangle(10, 5, "white")
-t.goto(-30, 160)
-rectangle(10, 5, "white")
-
-# Mouth
-t.goto(-65, 135)
-rectangle(40, 5, "black")
-
-t.hideturtle()
 t.done()

@@ -1,7 +1,8 @@
-score = int(input("Počet bodů: "))
+score = int(input("Pocet bodu: "))
+
 if score >= 9:
-    print("Výborně")
+    print("Vyborne")
 elif score >= 5:
-    print("Dobře")
+    print("Dobre")
 else:
     print("Zkus to znovu")

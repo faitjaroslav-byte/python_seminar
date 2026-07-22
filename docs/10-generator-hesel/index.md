@@ -1,68 +1,49 @@
-# 10. Projekt Generátor hesel
+# Lekce 10 - Projekt Generátor hesel
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Generátor hesel**.
+<strong>Doporučený čas:</strong> 90 minut<br>
+<strong>Výstup lekce:</strong> Student vytvoří program, ktery sklada náhodně heslo a umí generovani opakovat.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, projekt Password Picker
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Program skládá heslo z náhodně vybraného přídavného jména, podstatného jména, čísla a speciálního znaku. Uživatel může vytvářet další hesla.
-</div>
+## Co se dnes naučíš
+
+- použít seznamy slov
+- vybrat náhodně hodnoty
+- slozit textove heslo
+- opakovat generovani podle odpovědi uživatele
+
+## Proč to potřebujeme
+
+Navazujici PDF začíná praktickym projektem Password Picker. Projekt prirozene spojuje seznamy, modul random, text a cyklus while.
+
+!!! info "Důležitá myšlenka"
+    Silnejsi heslo muze vzniknout kombinaci nekolika nezavíšle vybranych části. Program ukazuje, jak lze náhodu spojit s retezci.
+
+!!! example "Projekt podle PDF"
+    Student vytvoří program, ktery sklada náhodně heslo a umí generovani opakovat.
 
 ## Analýza projektu
 
-### Vstupy
+- vstupem je odpověď, zda chce uživatel další heslo
+- program vybere přidávne jméno a podstatne jméno ze seznamu
+- přidá číslo a speciální znak
+- cyklus konci pri odpovědi n
 
-- odpověď uživatele, zda chce vytvořit další heslo.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 10 - Projekt Generátor hesel - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- seznam přídavných jmen
-- seznam podstatných jmen
-- náhodné číslo
-- náhodný znak z `string.punctuation`
-- cyklus pro opakované generování
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Generátor hesel](../assets/images/flow-password.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="generator_hesel.py" linenums="1"
+```python title="code/generator_hesel.py" linenums="1"
 import random
 import string
 
-adjectives = ["sleepy", "slow", "smelly", "wet", "fat", "red", "orange", "yellow", "green", "blue", "purple", "fluffy", "white", "proud", "brave"]
-nouns = ["apple", "dinosaur", "ball", "toaster", "goat", "dragon", "hammer", "duck", "panda"]
+adjectives = ["sleepy", "slow", "red", "green", "brave", "proud"]
+nouns = ["apple", "dinosaur", "panda", "rocket", "dragon"]
 
-print("Welcome to Password Picker!")
+print("Password Picker")
 
 while True:
     adjective = random.choice(adjectives)
@@ -80,9 +61,49 @@ while True:
 
 [Stáhnout soubor `generator_hesel.py`](code/generator_hesel.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `random.choice(...)` | vybere nahodnou polozku |
+| `string.punctuation` | sada speciálních znaků |
+| `str(number)` | převede číslo na text pro spojení |
+| `break` | ukončí cyklus |
+
+## Zkus změnit
+
+- Přidej vlastní slova do obou seznamu.
+- Změň rozsah náhodněho čísla.
+- Uprav program tak, aby heslo melo vzdy oddelovac mezi slovy.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Nelze spojit číslo s textem"
+    **Proč vznikne:** Cislo neni řetězec.
+
+    **Oprava:** Použij `str(number)`.
+
+!!! warning "Častá chyba: Cyklus nikdy neskonci"
+    **Proč vznikne:** Odpoved uživatele se netestuje správně.
+
+    **Oprava:** Zkontroluj podminku `if response == "n"`.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `import random` | modul pro náhodu |
+| `random.randrange(a, b)` | náhodně cele číslo |
+| `break` | predčasne ukončení cyklu |
+
+## Co už umím
+
+- [ ] umím popsat části hesla
+- [ ] umím použít náhodný výběr
+- [ ] umím vysvětlit while True
+- [ ] umím bezpečně ukončít cyklus
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Generátor hesel je první projekt druhe části: pracuje s nahodou, seznamy, retezci a opakováním.

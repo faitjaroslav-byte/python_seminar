@@ -1,67 +1,49 @@
-# 12. Projekt Devět životů
+# Lekce 12 - Projekt Devět životů
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Devět životů**.
+<strong>Doporučený čas:</strong> 90-120 minut<br>
+<strong>Výstup lekce:</strong> Student vytvoří hádací hru se skrytým slovem, nápovědou a omezeným počtem životů.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, projekt Nine Lives
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Program vybere tajné pětimístné slovo. Hráč hádá písmena nebo celé slovo. Každý chybný tip odebere jeden z devíti životů.
-</div>
+## Co se dnes naučíš
+
+- vybrat tajné slovo ze seznamu
+- udrzovat nápovědu jako seznam znaků
+- ubirat životy pri chybe
+- použít funkci pro aktualizaci nápovědy
+
+## Proč to potřebujeme
+
+Nine Lives v PDF je větší textová hra. Vyžaduje spojit seznamy, náhodu, while, if a funkci do jednoho uceleného programu.
+
+!!! info "Důležitá myšlenka"
+    Hra ma stav: tajné slovo, nápovědu, počet životů a informaci, jestli hráč výhral. Každý tah tento stav mění.
+
+!!! example "Projekt podle PDF"
+    Student vytvoří hádací hru se skrytým slovem, nápovědou a omezeným počtem životů.
 
 ## Analýza projektu
 
-### Vstupy
+- vstupem je písmeno nebo celé slovo
+- tajné slovo se vybere náhodně
+- nápověda začíná jako otazniky
+- správná písmena se doplní do nápovědy
+- špatný tip ubere život
 
-- tip hráče: jedno písmeno nebo celé slovo.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 12 - Projekt Devět životů - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- tajné slovo je vybráno náhodně
-- nápověda začíná pěti otazníky
-- funkce doplňuje správně uhodnutá písmena
-- cyklus končí výhrou nebo vyčerpáním životů
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Devět životů](../assets/images/flow-nine-lives.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="devet_zivotu.py" linenums="1"
+```python title="code/devet_zivotu.py" linenums="1"
 import random
 
 lives = 9
 words = ["pizza", "fairy", "teeth", "shirt", "otter", "plane"]
 secret_word = random.choice(words)
 clue = list("?????")
-heart_symbol = "♥"
 guessed_word_correctly = False
 
 def update_clue(guessed_letter, secret_word, clue):
@@ -69,11 +51,11 @@ def update_clue(guessed_letter, secret_word, clue):
     while index < len(secret_word):
         if guessed_letter == secret_word[index]:
             clue[index] = guessed_letter
-        index += 1
+        index = index + 1
 
 while lives > 0:
     print(clue)
-    print("Lives left:", heart_symbol * lives)
+    print("Lives left:", "<3 " * lives)
     guess = input("Guess a letter or the whole word: ")
 
     if guess == secret_word:
@@ -84,7 +66,7 @@ while lives > 0:
         update_clue(guess, secret_word, clue)
     else:
         print("Incorrect. You lose a life.")
-        lives -= 1
+        lives = lives - 1
 
     if "?" not in clue:
         guessed_word_correctly = True
@@ -98,9 +80,50 @@ else:
 
 [Stáhnout soubor `devet_zivotu.py`](code/devet_zivotu.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `clue = list("?????")` | nápověda, kterou lze měnit po znacich |
+| `update_clue(...)` | funkce najde všechny pozice písmene |
+| `while lives > 0` | hlavní herní cyklus |
+| `if "?" not in clue` | kontrola, zda je slovo cele odkryté |
+
+## Zkus změnit
+
+- Přidej další pětipísmenná slova.
+- Vypis tajné slovo pri ladění a potom výpis odstran.
+- Změň počet životů a sleduj dopad na obtížnost.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Slovo ma jinou délku nez nápověda"
+    **Proč vznikne:** Nápověda ma pet otazníků.
+
+    **Oprava:** Pouzivej pětipísmenná slova nebo vytvor nápovědu podle délky slova.
+
+!!! warning "Častá chyba: Funkce mění spatnou proměnnou"
+    **Proč vznikne:** Názvy parametrů a proměnných se pletou.
+
+    **Oprava:** Projdi funkci řádek po řádků s konkrétním písmenem.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `in` | test výskytu hodnoty |
+| `not in` | test, ze hodnota chybí |
+| `break` | ukončení cyklu |
+| `list("?????")` | seznam znaků |
+
+## Co už umím
+
+- [ ] umím popsat stav hry
+- [ ] umím vysvětlit funkci update_clue
+- [ ] umím najít podmínky výhry a prohry
+- [ ] umím upravit seznam slov
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Devět životů je první opravdu stavova hra. Uci premyslet o tom, co si program musi pamatovat mezi tahy.

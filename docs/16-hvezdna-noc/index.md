@@ -1,93 +1,113 @@
-# 16. Projekt Hvězdná noc
+# Lekce 16 - Projekt Hvězdná noc
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Hvězdná noc**.
+<strong>Doporučený čas:</strong> 90 minut<br>
+<strong>Výstup lekce:</strong> Student kreslí hvězdy na náhodných pozicich s nahodnou velikosti a barvou.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, turtle projekt Starry Night
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Program opakovaně vytváří hvězdy s náhodným počtem cípů, velikostí, barvou a polohou na tmavém pozadí.
-</div>
+## Co se dnes naučíš
+
+- vytvořít funkci pro hvezdu
+- používat náhodně souřadnice
+- kombinovat for a while
+- změnit velikost a barvu kresleneho prvku
+
+## Proč to potřebujeme
+
+PDF projekt hvezdne oblohy ukazuje, jak se funkce a nahoda doplňuji: funkce popisuje jednu hvezdu, nahoda ridi, kde a jaka se objevi další.
+
+!!! info "Důležitá myšlenka"
+    Jeden dobre popsany tvar se muze objevit mnohokrat. Rozmanitost v obrazu zajisti parametry a náhodně hodnoty.
+
+!!! example "Projekt podle PDF"
+    Student kreslí hvězdy na náhodných pozicich s nahodnou velikosti a barvou.
 
 ## Analýza projektu
 
-### Vstupy
+- program nema vstup od uživatele
+- funkce draw_star kreslí jednu hvezdu
+- pozice, velikost a barva se voli náhodně
+- cyklus přidáva další a další hvězdy
 
-- projekt nepoužívá vstup, případně používá odpovědi uvedené v zadání.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 16 - Projekt Hvězdná noc - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- funkce `draw_star()` kreslí jednu hvězdu
-- počet cípů je lichý
-- barva i souřadnice jsou náhodné
-- hlavní cyklus vytváří další hvězdy
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Hvězdná noc](../assets/images/flow-stars.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="hvezdna_noc.py" linenums="1"
+```python title="code/hvezdna_noc.py" linenums="1"
 import turtle as t
 from random import randint, random
 
+t.bgcolor("midnightblue")
 t.speed("fastest")
-t.bgcolor("midnight blue")
 t.hideturtle()
 
 def draw_star(points, size, color, x, y):
     t.penup()
     t.goto(x, y)
     t.pendown()
-    t.color(color)
-    t.begin_fill()
-    angle = 180 - (180 / points)
-    for _ in range(points):
+    t.pencolor(color)
+
+    for point in range(points):
         t.forward(size)
-        t.right(angle)
-    t.end_fill()
+        t.right(180 - 180 / points)
 
 while True:
-    points = randint(2, 5) * 2 + 1
-    size = randint(10, 50)
+    points = randint(5, 8)
+    size = randint(20, 80)
     color = (random(), random(), random())
-    x = randint(-350, 300)
+    x = randint(-300, 300)
     y = randint(-250, 250)
     draw_star(points, size, color, x, y)
 ```
 
 [Stáhnout soubor `hvezdna_noc.py`](code/hvezdna_noc.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `draw_star(...)` | parametry urcuji vzhled a pozici jedne hvězdy |
+| `randint(-300, 300)` | náhodná souřadnice |
+| `random()` | náhodná barevna složka 0-1 |
+| `for point in range(points)` | kreslení hvězdy po hranach |
+
+## Zkus změnit
+
+- Změň rozsah velikosti hvezd.
+- Omez hvězdy jen na horni polovinu okna.
+- Změň barvu pozadi na cernou nebo tmave fialovou.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Hvezdy jsou spojene carami"
+    **Proč vznikne:** Pero zustalo dole pri presunu.
+
+    **Oprava:** Ve funkci presouvej zelvu s penup().
+
+!!! warning "Častá chyba: Tvar nevypada jako hvězda"
+    **Proč vznikne:** Uhel otoceni neodpovida poctu bodu.
+
+    **Oprava:** Zachovej vztah `180 - 180 / points`.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `randint(a, b)` | náhodně cele číslo |
+| `random()` | náhodně desetinne číslo |
+| parametry funkce | rizeni kresby zvenku |
+
+## Co už umím
+
+- [ ] umím popsat parametry hvězdy
+- [ ] umím náhodně zvolit souřadnice
+- [ ] umím vysvětlit presun bez kreslení
+- [ ] umím upravit hustotu a velikost hvezd
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Hvězdná noc ukazuje, jak funkce vytvari jeden prvek a cyklus z nej sklada celou scenu.

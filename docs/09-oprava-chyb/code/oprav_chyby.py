@@ -1,4 +1,3 @@
-# Opravená verze
-name = "Ada"
+name = input("Jmeno: ")
 print("Ahoj", name)
 print(10 + 5)

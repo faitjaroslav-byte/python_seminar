@@ -1,91 +1,111 @@
-# 15. Projekt Kaleido-spirála
+# Lekce 15 - Projekt Kaleido-spirála
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Kaleido-spirála**.
+<strong>Doporučený čas:</strong> 90 minut<br>
+<strong>Výstup lekce:</strong> Student vytvoří opakujici se barevnou spiralovou kresbu s náhodnými barvami.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, turtle projekt kaleidoskopicke spiraly
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Želva kreslí stále větší kružnice. Po každé kružnici se otočí, posune a změní barvu. Překrýváním vzniká spirálový obrazec.
-</div>
+## Co se dnes naučíš
+
+- použít nekonecny kreslíci cyklus
+- měnit barvy náhodně
+- vytvořít funkci pro jeden krok kresby
+- pozorovat vliv uhlu, velikosti a posunu
+
+## Proč to potřebujeme
+
+Kaleidoskopicke projekty v PDF ukazuji silu malych Změň v cyklu. Jednoduchy krok, opakovany mnohokrat, vytvoří slozity obraz.
+
+!!! info "Důležitá myšlenka"
+    Spirala nevznikne jednim příkazem. Vznikne opakováním podobneho tvaru, kde se po kazdem kroku trochu změní pozice nebo smer.
+
+!!! example "Projekt podle PDF"
+    Student vytvoří opakujici se barevnou spiralovou kresbu s náhodnými barvami.
 
 ## Analýza projektu
 
-### Vstupy
+- program nema textovy vstup
+- funkce kreslí jeden kruh a posune zelvu
+- barva se voli náhodně
+- cyklus bezi do preruseni programu nebo zavreni okna
 
-- projekt nepoužívá vstup, případně používá odpovědi uvedené v zadání.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 15 - Projekt Kaleido-spirála - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- nekonečný cyklus
-- náhodná RGB barva
-- měnící se velikost, úhel a posun
-- opakované kreslení kružnic
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Kaleido-spirála](../assets/images/flow-kaleido.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="kaleido_spirala.py" linenums="1"
+```python title="code/kaleido_spirala.py" linenums="1"
 import turtle
 from random import randint
 
 turtle.bgcolor("black")
 turtle.speed("fastest")
 turtle.hideturtle()
+turtle.colormode(255)
 
-def draw_shape(size, angle, shift, shape):
+def draw_shape(size, angle, shift):
     turtle.pencolor(randint(0, 255), randint(0, 255), randint(0, 255))
     turtle.circle(size)
     turtle.right(angle)
     turtle.forward(shift)
-    turtle.shape(shape)
 
-turtle.colormode(255)
-size = 10
-angle = 0
+size = 30
+angle = 59
 shift = 1
 
 while True:
-    draw_shape(size, angle, shift, "circle")
-    size += 1
-    angle += 1
-    shift += 1
+    draw_shape(size, angle, shift)
+    size = size + 1
+    shift = shift + 1
 ```
 
 [Stáhnout soubor `kaleido_spirala.py`](code/kaleido_spirala.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `turtle.colormode(255)` | barvy jako hodnoty 0-255 |
+| `draw_shape(...)` | jeden krok spiraly |
+| `size = size + 1` | postupna změna velikosti |
+| `while True` | kreslení pokracuje bez pevného poctu kroku |
+
+## Zkus změnit
+
+- Změň uhel na 90, 91 nebo 121.
+- Změňsi nebo zvětší pocatecni velikost.
+- Zamen barvu pozadi.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Barvy nefunguji jako trojice čísel"
+    **Proč vznikne:** Neni nastaven colormode(255).
+
+    **Oprava:** Pred kreslením přidej `turtle.colormode(255)`.
+
+!!! warning "Častá chyba: Program nejde prirozene ukončít"
+    **Proč vznikne:** while True bezi stale.
+
+    **Oprava:** U grafickych nekonecnych programu pocitej s ukončením okna nebo prerusenim behu.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `randint(0, 255)` | náhodná barevna složka |
+| `circle(size)` | kruh |
+| `while True` | nekonecny cyklus |
+
+## Co už umím
+
+- [ ] umím vysvětlit jeden krok spiraly
+- [ ] umím měnit parametry kresby
+- [ ] umím použít nahodnou barvu
+- [ ] vím, proc je cyklus nekonecny
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Kaleido-spirála stoji na opakování a malych změnach. Je to krasny priklad algoritmicke grafiky.

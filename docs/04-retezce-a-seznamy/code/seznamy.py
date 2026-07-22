@@ -1,4 +1,9 @@
 from random import choice
-animals = ["kočka", "pes", "vydra"]
-animals.append("sova")
+
+word = "python"
+animals = ["pes", "kocka", "sova", "had"]
+
+print(len(word))
+print(word[0])
+print(animals[1])
 print(choice(animals))

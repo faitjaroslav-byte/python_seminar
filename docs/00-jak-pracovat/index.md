@@ -1,18 +1,36 @@
 # Jak pracovat s kurzem
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> průběžně<br>
-<strong>Výstup:</strong> Umíš otevřít ukázkový kód, spustit jej a zaznamenat vlastní úpravy.
+<strong>Doporučený rytmus:</strong> jedna lekce za 45-90 minut podle rozsahu<br>
+<strong>Výstup:</strong> po kazde lekci mas spustitelny program nebo hotovou část projektu
 </div>
 
-## Doporučený postup
+## Pracovní postup
 
-1. Přečti zadání a výstup projektu.
-2. Projdi analýzu.
-3. Zakresli nebo vysvětli logické schéma.
-4. Odhadni chování kódu.
-5. Spusť připravený `.py` soubor.
-6. Teprve potom prováděj vlastní úpravy.
+Kazda lekce je napsana tak, aby ses nejdříve zorientoval v problemu a teprve potom psal kód. To odpovida PDF předloze: programování neni opisovani příkazů, ale postupne stavění algoritmu.
 
-!!! tip "Pracuj po malých krocích"
-    Po každé významné změně program spusť. Chyba se pak hledá snáze.
+## Doporučeny postup
+
+1. Přečti si část **Co se dnes naučíš**.
+2. V části **Analýza problému** pojmenuj vstupy, zpracovani a výstupy.
+3. Podle **Schéma průběhu** si řekni postup bez Pythonu.
+4. Spust program ze složky `code/`.
+5. Udělej alespoň jednu úpravu z části **Zkus změnit**.
+6. Vrať se ke checklistu **Co už umím**.
+
+!!! tip "Když se objevi chyba"
+    Nejdrive si přečti poslední radky chybové hlášky. Potom oprav jednu věc a program znovu spust.
+
+## Práce se soubory
+
+Kazda lekce ma vlastní složku. Text lekce je v `index.md`, ukázky kódu jsou ve slozce `code/` a schémata ve slozce `images/`.
+
+```text
+docs/
+  02-prvni-program/
+    index.md
+    code/
+      prvni_program.py
+    images/
+      flowchart.svg
+```

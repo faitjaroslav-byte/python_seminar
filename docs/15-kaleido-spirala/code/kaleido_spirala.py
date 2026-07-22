@@ -4,21 +4,19 @@ from random import randint
 turtle.bgcolor("black")
 turtle.speed("fastest")
 turtle.hideturtle()
+turtle.colormode(255)
 
-def draw_shape(size, angle, shift, shape):
+def draw_shape(size, angle, shift):
     turtle.pencolor(randint(0, 255), randint(0, 255), randint(0, 255))
     turtle.circle(size)
     turtle.right(angle)
     turtle.forward(shift)
-    turtle.shape(shape)
 
-turtle.colormode(255)
-size = 10
-angle = 0
+size = 30
+angle = 59
 shift = 1
 
 while True:
-    draw_shape(size, angle, shift, "circle")
-    size += 1
-    angle += 1
-    shift += 1
+    draw_shape(size, angle, shift)
+    size = size + 1
+    shift = shift + 1

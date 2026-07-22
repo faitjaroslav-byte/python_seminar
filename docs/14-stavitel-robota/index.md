@@ -1,126 +1,126 @@
-# 14. Projekt Stavitel robota
+# Lekce 14 - Projekt Stavitel robota
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 90–120 minut<br>
-<strong>Výstup:</strong> Dokážeš analyzovat, sestavit a vysvětlit projekt **Stavitel robota**.
+<strong>Doporučený čas:</strong> 90-120 minut<br>
+<strong>Výstup lekce:</strong> Student kreslí robota z obdélníku a kruhu pomocí pomocne funkce.<br>
+<strong>Zdrojová předloha:</strong> Python_52-107, turtle projekt Robot Builder
 </div>
 
-<div class="project-goal">
-<strong>Výsledek projektu:</strong> Program používá jednu funkci pro kreslení barevných obdélníků. Z obdélníků postupně sestaví chodidla, nohy, tělo, paže, krk, hlavu a obličej.
-</div>
+## Co se dnes naučíš
+
+- rozlozit obrázek na jednoduche tvary
+- vytvořít funkci pro obdélník
+- používat souřadnice pro skladani části
+- pracovat s barvou výplně
+
+## Proč to potřebujeme
+
+Robot v PDF ukazuje, ze větší kresbu nemusime kreslít chaoticky. Nejprve ji rozlozime na části a kazdou část umístime na plátno.
+
+!!! info "Důležitá myšlenka"
+    Slozity obrázek se sklada z jednoduchych tvaru. Funkce pro obdélník odstrani opakování a zprehledni kreslení.
+
+!!! example "Projekt podle PDF"
+    Student kreslí robota z obdélníku a kruhu pomocí pomocne funkce.
 
 ## Analýza projektu
 
-### Vstupy
+- vstup od uživatele neni potreba
+- program kreslí části robota v pevném pořadí
+- funkce rectangle kreslí výplňěný obdélník
+- výstupem je hotovy obrázek robota
 
-- projekt nepoužívá vstup, případně používá odpovědi uvedené v zadání.
+## Schéma průběhu
 
-### Zpracování
+![Lekce 14 - Projekt Stavitel robota - schéma průběhu](images/flowchart.svg){ .flowchart }
 
-- funkce `rectangle()` kreslí vyplněný obdélník
-- `goto()` přesouvá želvu na výchozí bod dílu
-- každá část robota má polohu, rozměry a barvu
+## Projekt
 
-### Výstupy
-
-- textový nebo grafický výsledek projektu,
-- průběžné informace potřebné pro uživatele.
-
-## Logické schéma
-
-![Logické schéma projektu Stavitel robota](../assets/images/flow-robot.svg){ .flowchart }
-
-!!! info "Nejdříve schéma, potom kód"
-    Ukaž ve schématu místo, kde se program rozhoduje, a část, která se opakuje.
-
-## Stavba programu po krocích
-
-### 1. Připrav prostředí a data
-
-Urči moduly, seznamy, proměnné a počáteční hodnoty.
-
-### 2. Vytvoř hlavní operaci
-
-Napiš část, která provádí hlavní úkol projektu. U grafických projektů je to typicky funkce pro kreslení jednoho prvku.
-
-### 3. Přidej rozhodování a opakování
-
-Porovnej podmínky s logickým schématem. Každý rozhodovací bod ve schématu musí mít odpovídající podmínku v kódu.
-
-### 4. Dokonči a otestuj program
-
-Vyzkoušej běžné i krajní vstupy. U nekonečných grafických programů se program ukončuje zavřením okna nebo přerušením běhu.
-
-## Kompletní kód
-
-```python title="stavitel_robota.py" linenums="1"
+```python title="code/stavitel_robota.py" linenums="1"
 import turtle as t
 
 t.speed("fastest")
-t.bgcolor("Dodger blue")
+t.hideturtle()
 
-def rectangle(horizontal, vertical, color):
-    t.pendown()
-    t.pensize(1)
-    t.color(color)
+def rectangle(width, height, color):
+    t.fillcolor(color)
     t.begin_fill()
-    for _ in range(2):
-        t.forward(horizontal)
+    for side in range(2):
+        t.forward(width)
         t.right(90)
-        t.forward(vertical)
+        t.forward(height)
         t.right(90)
     t.end_fill()
+
+def move_to(x, y):
     t.penup()
+    t.goto(x, y)
+    t.pendown()
 
-# Feet
-t.goto(-100, -150)
-rectangle(50, 20, "blue")
-t.goto(-30, -150)
-rectangle(50, 20, "blue")
+move_to(-60, 80)
+rectangle(120, 80, "steelblue")
+move_to(-35, -5)
+rectangle(70, 95, "gray")
+move_to(-70, -25)
+rectangle(30, 90, "orange")
+move_to(40, -25)
+rectangle(30, 90, "orange")
+move_to(-25, 95)
+t.dot(16, "white")
+move_to(25, 95)
+t.dot(16, "white")
+move_to(-25, 45)
+rectangle(50, 10, "black")
 
-# Legs
-t.goto(-75, -50)
-rectangle(15, 100, "grey")
-t.goto(-10, -50)
-rectangle(15, 100, "grey")
-
-# Body
-t.goto(-90, 100)
-rectangle(100, 150, "red")
-
-# Arms
-t.goto(-150, 70)
-rectangle(60, 15, "grey")
-t.goto(10, 70)
-rectangle(60, 15, "grey")
-
-# Neck
-t.goto(-50, 120)
-rectangle(15, 20, "grey")
-
-# Head
-t.goto(-85, 170)
-rectangle(80, 50, "red")
-
-# Eyes
-t.goto(-60, 160)
-rectangle(10, 5, "white")
-t.goto(-30, 160)
-rectangle(10, 5, "white")
-
-# Mouth
-t.goto(-65, 135)
-rectangle(40, 5, "black")
-
-t.hideturtle()
 t.done()
 ```
 
 [Stáhnout soubor `stavitel_robota.py`](code/stavitel_robota.py){ .md-button .md-button--primary }
 
-## Kontrola porozumění
+## Rozbor programu
 
-- [ ] Dokážu vysvětlit vstupy a výstupy programu.
-- [ ] Dokážu najít hlavní cyklus.
-- [ ] Dokážu určit, které části kódu odpovídají rozhodovacím bodům ve schématu.
-- [ ] Dokážu změnit jednu hodnotu a předem odhadnout důsledek.
+| Část programu | Význam |
+| --- | --- |
+| `rectangle(...)` | jedna funkce pro opakovany tvar |
+| `begin_fill()` / `end_fill()` | vybarveni tvaru |
+| `move_to(...)` | presun bez kreslení cary |
+| pořadí volani | urcuje, ktere části se kreslí driv |
+
+## Zkus změnit
+
+- Změň barvu tela robota.
+- Pridavej antenu nebo tlacitka jen z uz znamych tvaru.
+- Zkus změnit souřadnice jedne části a popis dopad.
+
+## Časté chyby
+
+!!! warning "Častá chyba: Za presunem zustava cara"
+    **Proč vznikne:** Pero nebylo zvednute.
+
+    **Oprava:** Pred goto použij penup() a po presunu pendown().
+
+!!! warning "Častá chyba: Vypln nefunguje"
+    **Proč vznikne:** Chybi dvojice begin_fill/end_fill.
+
+    **Oprava:** Obal kreslení tvaru obema příkazy.
+
+## Tahák
+
+| Zápis | K čemu slouží |
+| --- | --- |
+| `t.goto(x, y)` | presun na souřadnice |
+| `t.fillcolor(c)` | barva výplně |
+| `t.begin_fill()` | začátek výplně |
+| `t.dot(size, color)` | kruh nebo bod |
+
+## Co už umím
+
+- [ ] umím rozlozit kresbu na části
+- [ ] umím použít pomocnou funkci
+- [ ] umím kreslít výplněne tvary
+- [ ] umím upravit souřadnice části robota
+
+## Shrnutí
+
+!!! success "Zapamatuj si"
+    Stavitel robota ukazuje, ze graficky projekt začíná analyzou tvaru a jejich pořadí, ne samotnym psanim příkazů.
