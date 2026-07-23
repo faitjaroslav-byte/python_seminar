@@ -2,7 +2,7 @@
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 90-120 minut<br>
-<strong>Výstup lekce:</strong> Student sestaví projekt Animal Quiz se skóre, kontrolní funkcí, více otázkami, ignorováním velikosti písmen a třemi pokusy.<br>
+<strong>Výstup lekce:</strong> Student naprogramuje hru Animal Quiz, který sleduje skóre, kontroluje odpovědi, obsahuje více otázek, nerozlišuje velikost písmen a umožňuje tři pokusy.<br>
 </div>
 
 ## Co se dnes naučíš
