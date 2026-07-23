@@ -25,6 +25,13 @@ Každý den děláš rozhodnutí podle odpovědí na otázky: je venku tma, prš
 
 Počítač umí porovnávat hodnoty a rozhodovat, zda je nějaké tvrzení pravdivé. Výsledkem je vždy hodnota True nebo False, kterou můžeš uložit do proměnné nebo přímo vypsat.
 
+### Kdo byl George Boole?
+
+**George Boole (1815-1864)** byl anglický matematik, který vytvořil **Booleovu algebru** - matematiku pracující pouze se dvěma hodnotami: **PRAVDA (`True`)** a **NEPRAVDA (`False`)**. Díky jeho myšlenkám dnes mohou počítače rozhodovat, zda je nějaká podmínka splněna. V programování se s nimi setkáš například při použití operátorů **`and`**, **`or`** a **`not`**.
+
+!!! tip "Zajímavost"
+    Přestože George Boole žil dávno před vznikem počítačů, jeho práce tvoří jeden ze základů moderní informatiky a digitální techniky.
+
 ```python title="code/01_booleans.py" linenums="1"
 answer_one = True
 answer_two = False
