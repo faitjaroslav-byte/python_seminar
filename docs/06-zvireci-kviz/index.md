@@ -37,7 +37,7 @@ Projekt Animal Quiz spojuje všechno, co už se objevilo v předchozích lekcíc
 
 ## Schéma průběhu
 
-![Projekt Animal Quiz - průběh otázky, kontroly odpovědi, přičtení skóre a rozhodnutí o další otázce](images/flowchart.svg){ .flowchart }
+![Projekt Animal Quiz - kompletní flowchart s kontrolou odpovědi, pokusy, přičtením skóre, dalšími otázkami a výpisem výsledku](images/flowchart.svg){ .flowchart }
 
 ## 1. Založ nový soubor
 
