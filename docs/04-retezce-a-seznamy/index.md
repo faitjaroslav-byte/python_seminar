@@ -48,7 +48,7 @@ print(len(message))
 | `len(message)` | spočítá počet znaků včetně mezer |
 
 !!! tip "Délka řetězce"
-    `len()` je vestavěná funkce. Ve skenu počítá délku zprávy `Welcome to Earth, Ally Alien`, včetně mezer a čárky.
+    `len()` je vestavěná funkce. Počítá délku zprávy `Welcome to Earth, Ally Alien`, včetně mezer a čárky.
 
 ## Seznamy
 

@@ -33,7 +33,7 @@ Programátoři mají rádi zkratky, které usnadňují psaní kódu. Funkce je p
 
 ## Vestavěné funkce
 
-Některé funkce už Python obsahuje. Ve skenu se připomínají například `input()` a `print()` a potom se ukazují funkce `max()` a `min()`.
+Některé funkce už Python obsahuje. Nejdřív si připomeneme například `input()` a `print()` a potom si ukážeme funkce `max()` a `min()`.
 
 ```python title="code/01_builtin_functions.py" linenums="1"
 name = input("What is your name? ")

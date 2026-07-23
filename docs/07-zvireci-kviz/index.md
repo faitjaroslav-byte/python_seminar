@@ -19,7 +19,7 @@
 
 ## Proč to potřebujeme
 
-Projekt Animal Quiz spojuje všechno, co už se objevilo ve skenu: proměnné, vstup, podmínky, cykly a funkce. Výsledkem je krátký kvíz, který se dá snadno upravit na jiné téma.
+Projekt Animal Quiz spojuje všechno, co už se objevilo v předchozích lekcích: proměnné, vstup, podmínky, cykly a funkce. Výsledkem je krátký kvíz, který se dá snadno upravit na jiné téma.
 
 !!! info "Důležitá myšlenka"
     Každá otázka má stejný postup: položit otázku, načíst odpověď, zkontrolovat ji a případně přičíst bod.
@@ -80,7 +80,7 @@ print("Your score is " + str(score))
 
 ## 4. Vytvoř funkci pro kontrolu
 
-Ve skenu se opakovaná kontrola přesune do funkce `check_guess()`.
+Opakovanou kontrolu přesuneme do funkce `check_guess()`.
 
 ```python title="code/02_check_guess.py" linenums="1"
 score = 0

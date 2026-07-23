@@ -2,7 +2,7 @@
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 75-90 minut<br>
-<strong>Výstup lekce:</strong> Student použije porovnání, booleovské hodnoty a větvení `if`, `else` a `elif` podle ukázek ze skenu.<br>
+<strong>Výstup lekce:</strong> Student použije porovnání, booleovské hodnoty a větvení `if`, `else` a `elif` podle ukázek z kapitoly Making decisions.<br>
 <strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 28-31, kapitola Making decisions
 </div>
 
@@ -41,7 +41,7 @@ print(answer_two)
 
 ## Operátory porovnání
 
-Ve skenu jsou porovnání vysvětlena na věku a také na ananasech a zebrách.
+Porovnání si ukážeme na věku a také na ananasech a zebrách.
 
 ```python title="code/02_comparisons.py" linenums="1"
 age = 10
