@@ -3,7 +3,6 @@
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 60-75 minut<br>
 <strong>Výstup lekce:</strong> Student vytvoří proměnnou, uloží do ní číslo, řetězec nebo seznam a použije uloženou hodnotu v programu.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 24-27, kapitola Variables
 </div>
 
 ## Co se dnes naučíš
@@ -48,7 +47,7 @@ print(age)
 
 Dobré jméno proměnné ti později připomene, co je uvnitř. Když hráč ve hře žije, může se proměnná jmenovat třeba `player_lives`.
 
-| Dělej | Nedělej |
+| Co dělat | A co ne|
 | --- | --- |
 | začínej jméno proměnné písmenem | nezačínej číslem |
 | používej jasná slova | nepoužívej náhodné symboly |
@@ -58,7 +57,7 @@ Dobré jméno proměnné ti později připomene, co je uvnitř. Když hráč ve 
 
 ## Čísla v proměnných
 
-Proměnné mohou ukládat čísla a potom s nimi počítat. V Pythonu se celá čísla označují jako integers a desetinná čísla jako floats.
+Do proměnných je možné ukládat čísla a následně s nimi provádět výpočty. V Pythonu se celá čísla označují jako integers a desetinná čísla jako floats.
 
 ### Jednoduchý výpočet
 
