@@ -2,25 +2,24 @@
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 45-60 minut<br>
-<strong>Výstup lekce:</strong> Student vytvoří soubor v IDLE, spustí první program, opraví jednoduchou chybu a rozšíří program o otázku na jméno.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strana 23, kapitola Your first program
+<strong>Výstup lekce:</strong> Student vytvoří soubor ve VS Code, spustí první program, opraví jednoduchou chybu a rozšíří program o otázku na jméno.
 </div>
 
 ## Co se dnes naučíš
 
-- otevřít editor IDLE a založit nový soubor
+- otevřít editor VS Code a založit nový soubor
 - napsat první řádek programu
 - uložit soubor s příponou `.py`
-- spustit program a zkontrolovat výstup v Python Shellu
+- spustit program a zkontrolovat výstup v terminálu
 - opravit drobnou chybu v zápisu
 - přidat další řádky, které se uživatele zeptají na jméno
 
 ## Proč to potřebujeme
 
-První program má hlavně ukázat celý pracovní rytmus: otevřít editor, napsat kód, uložit soubor, spustit program a podívat se na výsledek. Až potom má smysl program rozšiřovat.
+První program má studentům ukázat celý postup práce: otevřít editor, napsat kód, uložit soubor, spustit program a zkontrolovat výsledek. Teprve potom má smysl program dále rozšiřovat.
 
 !!! info "Důležitá myšlenka"
-    Kód píšeš do editoru, ale výsledek uvidíš v okně Python Shell. Když změníš program, musíš ho před dalším spuštěním znovu uložit.
+    Kód píšeš v editoru, ale výsledek uvidíš v terminálu. Když změníš program, musíš ho před dalším spuštěním znovu uložit.
 
 ## Jak bude program fungovat
 
@@ -35,9 +34,9 @@ Ve skenu je program vysvětlený jako krátký postup:
 
 ![Schéma prvního programu: pozdrav, otázka na jméno a odpověď se jménem](images/flowchart.svg){ .flowchart }
 
-## 1. Spusť IDLE a vytvoř nový soubor
+## 1. Spusť VS Code a vytvoř nový soubor
 
-Po spuštění IDLE vytvoř prázdný soubor přes **File -> New File**. Program se nepíše do shellu, ale do editorového okna.
+Po spuštění VS Code vytvoř nový soubor typu **Python File**. Program se píše do editoru kódu, výsledek běhu programu se potom zobrazí v terminálu.
 
 ## 2. Napiš první řádek
 
@@ -56,7 +55,7 @@ Soubor ulož například jako `helloworld.py`. Přípona `.py` říká, že jde 
 
 ## 4. Spusť a zkontroluj výsledek
 
-Program spusť přes **Run -> Run Module**. V Python Shellu by se měla objevit zpráva:
+Program spusť tlačítkem **Run**. V terminálu by se měla objevit zpráva:
 
 ```text
 Hello, World!
@@ -115,36 +114,13 @@ print("Hello,", person)
 
 ## Co už umím
 
-- [ ] umím vytvořit nový soubor v IDLE
+- [ ] umím vytvořit nový soubor ve VS Code
 - [ ] umím uložit soubor s příponou `.py`
-- [ ] umím spustit program přes Run Module
+- [ ] umím spustit program tlačítkem Run
 - [ ] umím opravit chybějící uvozovku nebo závorku
 - [ ] umím rozšířit program o další řádky
 
 ## Shrnutí
 
 !!! success "Zapamatuj si"
-    První program není jen jeden řádek kódu. Učí tě celý postup práce: napsat, uložit, spustit, zkontrolovat a postupně rozšiřovat.
-    **Proč vznikne:** Python se snaží text chápat jako název.
-
-    **Oprava:** Uzavři text do uvozovek.
-
-## Tahák
-
-| Zápis | K čemu slouží |
-| --- | --- |
-| `print("text")` | vypíše text |
-| `# komentář` | poznámka v kódu |
-| pořadí řádků | pořadí vykonáni programu |
-
-## Co už umím
-
-- [ ] umím vypsat text
-- [ ] umím přidat více výstupu
-- [ ] rozumím komentáři
-- [ ] umím opravit chybějící uvozovky nebo závorku
-
-## Shrnutí
-
-!!! success "Zapamatuj si"
-    První program ukázal, ze i krátký kód má strukturu: příkaz, data v uvozovkach a pořadí řádků.
+    První program ukázal, že i krátký kód má svou strukturu: příkazy, text uzavřený v uvozovkách a pořadí jednotlivých řádků.
