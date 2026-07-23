@@ -3,28 +3,30 @@
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 60-75 minut<br>
 <strong>Výstup lekce:</strong> Student použije `for`, `while`, nekonečný cyklus a cyklus uvnitř cyklu podle ukázek z kapitoly Loopy loops.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 32-35, kapitola Loopy loops
 </div>
 
 ## Co se dnes naučíš
 
-- opakovat blok kódu pomocí `for`
-- použít `range()` pro počet opakování
-- opakovat kód pomocí `while`
-- zastavit cyklus podle odpovědi uživatele
-- rozpoznat nekonečný cyklus
-- vložit jeden cyklus dovnitř druhého
+- použít cyklus `for` k opakování bloku kódu
+- použít funkci `range()` k určení počtu opakování
+- vytvořit cyklus `while` řízený podmínkou
+- ukončit cyklus podle odpovědi uživatele
+- rozpoznat a opravit nekonečný cyklus
+- vložit jeden cyklus dovnitř druhého (vnořené cykly)
+
 
 ## Proč to potřebujeme
 
-Počítače jsou dobré v nudné opakované práci. Místo abys psal stejný řádek desetkrát, necháš Python zopakovat blok kódu za tebe.
+Počítače jsou skvělé v opakování stále stejných úkolů. Místo psaní stejného kódu znovu a znovu můžeš nechat Python, aby celý blok kódu opakoval za tebe.
 
 !!! info "Důležitá myšlenka"
     Tělo cyklu je odsazený blok příkazů. Všechny příkazy v těle cyklu se opakují.
 
-## For loops
+## for cyklus
 
-Když víš, kolikrát se má blok kódu opakovat, použij `for`. Emma nechce, aby někdo lezl do jejího pokoje, takže program vypíše stejnou zprávu desetkrát.
+Když víš, kolikrát se má blok kódu opakovat, použij cyklus `for`. 
+
+Emma nechce, aby někdo lezl do jejího pokoje, takže program vypíše stejnou zprávu desetkrát.
 
 ```python title="code/01_for_loop.py" linenums="1"
 for counter in range(1, 11):
@@ -41,9 +43,11 @@ for counter in range(1, 11):
 !!! tip "Range"
     `range(1, 11)` znamená čísla 1 až 10. Poslední hranice není zahrnutá.
 
-## While loops
+## Cyklus while 
 
-Když nevíš předem, kolikrát se má cyklus opakovat, použij `while`. Ahmed počítá, kolik hrochů už balancuje na sobě, a vždy se zeptá, jestli má přidat dalšího.
+Když nevíš předem, kolikrát se má cyklus opakovat, použij `while`. 
+
+Ahmed počítá, kolik hrochů už balancuje na sobě, a vždy se zeptá, jestli má přidat dalšího.
 
 ```python title="code/02_while_hippos.py" linenums="1"
 hippos = 0
@@ -65,7 +69,7 @@ while answer == "y":
 
 ## Nekonečné cykly
 
-Někdy chceš, aby program běžel pořád. Ukážeme si to na cyklu, který nikdy nemá nepravdivou podmínku.
+Někdy potřebujeme, aby program běžel nepřetržitě. Toho dosáhneme cyklem, jehož podmínka je vždy pravdivá. Takový cyklus se nikdy sám neukončí.
 
 ```python title="code/03_infinite_loop.py" linenums="1"
 while True:
@@ -77,7 +81,7 @@ while True:
 
 ## Cyklus uvnitř cyklu
 
-Jeden cyklus může být uvnitř druhého. Vnější cyklus opakuje celé tělo, vnitřní cyklus se spustí pokaždé znovu.
+Jeden cyklus může obsahovat další cyklus. Při každém průchodu vnějšího cyklu se vnitřní cyklus spustí znovu od začátku.
 
 ```python title="code/04_nested_loop.py" linenums="1"
 for hooray_counter in range(1, 4):
@@ -111,21 +115,21 @@ Tento program vypíše dvakrát `Hip` a potom `Hooray!`. Celý vzor zopakuje tř
 
 | Zápis | K čemu slouží |
 | --- | --- |
-| `for counter in range(1, 11):` | opakování známý počet krát |
-| `while answer == "y":` | opakování podle podmínky |
-| `while True:` | nekonečný cyklus |
+| `for counter in range(1, 11):` | opakuje blok kódu 10x |
+| `while answer == "y":` | opakuje blok kódu dokud platí podmínka |
+| `while True:` | vytváří (nekonečný) cyklus |
 | `str(number)` | převod čísla na řetězec |
-| vnořený cyklus | cyklus zapsaný uvnitř jiného cyklu |
+| vnořený cyklus | cyklus umístěný uvnitř jiného cyklu |
 
 ## Co už umím
 
-- [ ] umím použít `for` s `range()`
+- [ ] umím použít cyklus `for` s počtem opakování `range()`
 - [ ] rozumím tělu cyklu a odsazení
-- [ ] umím použít `while`
-- [ ] vím, jak vznikne nekonečný cyklus
+- [ ] umím použít podmíněný cyklus `while`
+- [ ] vím, jak vznikne nekonečný cyklus a jak ho ukončit
 - [ ] poznám cyklus uvnitř cyklu
 
 ## Shrnutí
 
 !!! success "Zapamatuj si"
-    `for` se hodí, když znáš počet opakování. `while` se hodí, když cyklus závisí na podmínce. V obou případech Python opakuje odsazené tělo cyklu.
+    `for` se hodí, když předem víš kolikrát se má kód opakovat. `while` použij když opakování závisí na splnění podmínky. V obou případech Python opakuje blok kódu se stejným odsazením.
