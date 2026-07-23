@@ -146,13 +146,89 @@ print("Your score is " + str(score))
 
 ## Hacky a úpravy
 
-Ve zdroji je projekt záměrně otevřený k úpravám:
+Hotový kvíz můžeš dál měnit. Vždy si ale novou verzi ulož jako samostatný soubor, aby sis nepokazil původní funkční hru.
 
-- přidej další otázky,
-- změň téma kvízu,
-- udělej kvíz s více možnými odpověďmi,
-- zlepši bodování za druhý nebo třetí pokus,
-- ověř, že se původní hra nepokazila.
+### Udělej kvíz delší
+
+Přidej další otázky a ke každé zavolej funkci `check_guess()`. Můžeš začít třeba otázkami ze zvířecího kvízu:
+
+```python
+guess = input("Which animal has a long trunk? ")
+check_guess(guess, "elephant")
+
+guess = input("What kind of mammal can fly? ")
+check_guess(guess, "bat")
+
+guess = input("How many hearts does an octopus have? ")
+check_guess(guess, "three")
+```
+
+### Vytvoř otázku s možnostmi
+
+U otázky s více možnostmi hráč neodpovídá celým slovem, ale písmenem. Program potom kontroluje, jestli hráč zadal správnou možnost.
+
+```python
+guess = input("Which one of these is a fish? A) Whale B) Dolphin C) Shark D) Squid. Type A, B, C, or D ")
+check_guess(guess, "C")
+```
+
+### Rozděl dlouhou otázku na více řádků
+
+Dlouhý text v `input()` se špatně čte. Znak `\n` vytvoří nový řádek v textu otázky.
+
+```python
+guess = input("Which one of these is a fish?\nA) Whale\nB) Dolphin\nC) Shark\nD) Squid\nType A, B, C, or D ")
+check_guess(guess, "C")
+```
+
+V okně programu se otázka zobrazí přehledně pod sebou:
+
+```text
+Which one of these is a fish?
+A) Whale
+B) Dolphin
+C) Shark
+D) Squid
+Type A, B, C, or D
+```
+
+### Vytvoř otázku True / False
+
+Některé otázky mohou mít jen dvě možné odpovědi. Takový kvíz se hodí pro rychlé ověřování tvrzení.
+
+```python
+guess = input("Mice are mammals. True or False? ")
+check_guess(guess, "True")
+```
+
+### Změň obtížnost
+
+Kvíz bude těžší, když hráč dostane méně pokusů. V podmínce cyklu stačí změnit číslo `3` na menší hodnotu.
+
+```python
+while still_guessing and attempt < 2:
+```
+
+Stejné pravidlo můžeš upravit i u kontroly posledního pokusu:
+
+```python
+if attempt == 2:
+    print("The correct answer is " + answer)
+```
+
+### Dej více bodů za rychlejší odpověď
+
+Hráč může dostat více bodů, když odpoví správně hned napoprvé. Místo jednoho bodu použij výpočet podle počtu pokusů:
+
+```python
+score = score + 3 - attempt
+```
+
+Když hráč odpoví správně na první pokus, získá 3 body. Na druhý pokus získá 2 body a na třetí pokus 1 bod.
+
+### Změň téma kvízu
+
+Zvířata jsou jen začátek. Stejný program můžeš použít pro kvíz o sportu, filmech, hudbě, škole nebo rodině. Stačí vyměnit otázky a správné odpovědi.
 
 ## Časté chyby
 
