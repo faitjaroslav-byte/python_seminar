@@ -2,7 +2,7 @@
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 60-75 minut<br>
-<strong>Výstup lekce:</strong> Student použije `for`, `while`, nekonečný cyklus a cyklus uvnitř cyklu podle ukázek z kapitoly Loopy loops.<br>
+<strong>Výstup lekce:</strong> Student použije cykly `for`, `while`, pozná a dokáže ukončit nekonečný cyklus .<br>
 </div>
 
 ## Co se dnes naučíš
@@ -22,7 +22,7 @@ Počítače jsou skvělé v opakování stále stejných úkolů. Místo psaní 
 !!! info "Důležitá myšlenka"
     Tělo cyklu je odsazený blok příkazů. Všechny příkazy v těle cyklu se opakují.
 
-## for cyklus
+## Cyklus for
 
 Když víš, kolikrát se má blok kódu opakovat, použij cyklus `for`. 
 
@@ -67,7 +67,7 @@ while answer == "y":
 | `hippos = hippos + 1` | přidá dalšího hrocha |
 | `str(hippos)` | převede číslo na text, aby šlo spojit se zprávou |
 
-## Nekonečné cykly
+## Nekonečný cyklus
 
 Někdy potřebujeme, aby program běžel nepřetržitě. Toho dosáhneme cyklem, jehož podmínka je vždy pravdivá. Takový cyklus se nikdy sám neukončí.
 
@@ -79,7 +79,7 @@ while True:
 !!! warning "Zastavení cyklu"
     Nekonečný cyklus můžeš zastavit například přes `Ctrl-C`, zavřením okna nebo tlačítkem Stop podle prostředí, ve kterém program běží.
 
-## Cyklus uvnitř cyklu
+## Vnořené cykly
 
 Jeden cyklus může obsahovat další cyklus. Při každém průchodu vnějšího cyklu se vnitřní cyklus spustí znovu od začátku.
 
