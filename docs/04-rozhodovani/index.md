@@ -3,7 +3,6 @@
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 75-90 minut<br>
 <strong>Výstup lekce:</strong> Student použije porovnání, booleovské hodnoty a větvení `if`, `else` a `elif` podle ukázek z kapitoly Making decisions.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 28-31, kapitola Making decisions
 </div>
 
 ## Co se dnes naučíš
@@ -12,8 +11,8 @@
 - rozpoznat hodnoty `True` a `False`
 - použít logické operátory `and` a `or`
 - zapsat jednoduchou podmínku `if`
-- přidat druhou větev pomocí `else`
-- zapsat více větví pomocí `elif`
+- přidat druhou větev podmínky pomocí `else`
+- zapsat více větví podmínky pomocí `elif`
 
 ## Proč to potřebujeme
 
@@ -22,9 +21,9 @@ Každý den děláš rozhodnutí podle odpovědí na otázky: je venku tma, prš
 !!! info "Důležitá myšlenka"
     Výsledek porovnání je booleovská hodnota: buď `True`, nebo `False`.
 
-## Otázky, které porovnávají
+## Logické hodnoty (Boolean)
 
-Počítač může porovnat dvě hodnoty. Výsledek si můžeš uložit do proměnné nebo rovnou vypsat.
+Počítač umí porovnávat hodnoty a rozhodovat, zda je nějaké tvrzení pravdivé. Výsledkem je vždy hodnota True nebo False, kterou můžeš uložit do proměnné nebo přímo vypsat.
 
 ```python title="code/01_booleans.py" linenums="1"
 answer_one = True
@@ -70,7 +69,9 @@ print((pineapples == 3) or (zebras == 2))
 
 ## Jízda na horské dráze
 
-Na straně 31 se rozhoduje, jestli dítě splňuje dvě podmínky: věk a výšku.
+Na ceduli v zábavním parku stojí, že na horskou dráhu mohou pouze lidé starší než 8 let a vyšší než 4 stopy a 7 palců. Mia je 10 let a měří 5 stop. 
+Pomocí Python Shellu ověříme, zda může na horskou dráhu. Zadej následující řádky kódu, které vytvoří proměnné pro Miin věk a výšku a přiřadí jim správné hodnoty.
+Poté zapiš pravidla pro vstup na horskou dráhu jako logický (Boolean) výraz a stiskni Enter.
 
 ```python title="code/03_rollercoaster.py" linenums="1"
 age = 10
