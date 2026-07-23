@@ -1,39 +1,32 @@
-# Lekce 6 - Projekt Zvířecí kvíz
+# Lekce 6 - Projekt Zvířecí kvíz (Animal Quiz)
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 90-120 minut<br>
 <strong>Výstup lekce:</strong> Student sestaví projekt Animal Quiz se skóre, kontrolní funkcí, více otázkami, ignorováním velikosti písmen a třemi pokusy.<br>
-<strong>Zdrojová předloha:</strong> Python-first steps-p.51, strany 36-43, projekt Animal Quiz
 </div>
 
 ## Co se dnes naučíš
 
-- založit projekt `animal_quiz.py`
 - ukládat skóre do proměnné `score`
 - položit otázku pomocí `input()`
 - vytvořit funkci `check_guess()`
 - použít `global score`
 - vypsat konečné skóre
-- ignorovat rozdíl mezi velkými a malými písmeny
+- porovnávat text tak, aby nezáleželo na velikosti písmen
 - dát hráči až tři pokusy
 
-## Proč to potřebujeme
+## Proč to děláme
 
-Projekt Animal Quiz spojuje všechno, co už se objevilo v předchozích lekcích: proměnné, vstup, podmínky, cykly a funkce. Výsledkem je krátký kvíz, který se dá snadno upravit na jiné téma.
+Projekt Animal Quiz propojí všechno, co ses naučil v předchozích lekcích: proměnné, vstup od uživatele, podmínky, cykly i funkce. Výsledkem bude jednoduchý kvíz, který si můžeš snadno upravit na libovolné téma.
 
-!!! info "Důležitá myšlenka"
-    Každá otázka má stejný postup: položit otázku, načíst odpověď, zkontrolovat ji a případně přičíst bod.
-
-!!! example "Projekt podle PDF"
-    Ve zdroji je kvíz o zvířatech. Otázky jsou například na ledního medvěda, geparda a plejtváka obrovského.
 
 ## Analýza projektu
 
 - vstupem jsou odpovědi hráče
-- program uchovává skóre v proměnné `score`
+- skóre se ukládá do proměnné `score`
 - funkce `check_guess()` porovnává odpověď se správnou hodnotou
-- po špatné odpovědi může hráč zkusit odpovědět znovu
-- na konci program zobrazí výsledné skóre
+- po špatné odpovědi může hráč odpověď zopakovat
+- na konci se zobrazí výsledné skóre
 
 ## Schéma průběhu
 
@@ -41,7 +34,7 @@ Projekt Animal Quiz spojuje všechno, co už se objevilo v předchozích lekcíc
 
 ## 1. Založ nový soubor
 
-V IDLE vytvoř nový soubor a ulož ho jako `animal_quiz.py`.
+Ve VS Code vytvoř nový soubor a ulož ho jako `animal_quiz.py`.
 
 ## 2. Připrav skóre a úvod
 
@@ -107,10 +100,10 @@ print("Your score is " + str(score))
 
 | Část programu | Význam |
 | --- | --- |
-| `def check_guess(guess, answer):` | funkce dostane tip hráče a správnou odpověď |
-| `global score` | dovolí funkci měnit proměnnou `score` |
-| `check_guess(guess1, "polar bear")` | zavolá funkci pro první otázku |
-| `str(score)` | převede skóre na text pro závěrečný výpis |
+| `def check_guess(guess, answer):` | definuje funkci pro kontrolu odpovědi hráče |
+| `global score` | umožňuje funkci upravit proměnnou `score` |
+| `check_guess(guess1, "polar bear")` | zavolá funkci a zkontroluje odpověď na první otázku |
+| `str(score)` | převede číselné skóre na text pro závěrečný výpis |
 
 ## 5. Ignoruj velikost písmen a přidej pokusy
 
