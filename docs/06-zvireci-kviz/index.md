@@ -28,7 +28,7 @@ Projekt Animal Quiz propojí všechno, co ses naučil v předchozích lekcích: 
 - po špatné odpovědi může hráč odpověď zopakovat
 - na konci se zobrazí výsledné skóre
 
-## Schéma průběhu
+## Vývojový diagram (Flowchart)
 
 ![Projekt Animal Quiz - kompletní flowchart s kontrolou odpovědi, pokusy, přičtením skóre, dalšími otázkami a výpisem výsledku](images/flowchart.svg){ .flowchart }
 
@@ -71,7 +71,7 @@ if guess3 == "blue whale":
 print("Your score is " + str(score))
 ```
 
-## 4. Vytvoř funkci pro kontrolu
+## 4. Vytvoř funkci pro kontrolu odpovědi
 
 Opakovanou kontrolu přesuneme do funkce `check_guess()`.
 
@@ -107,7 +107,7 @@ print("Your score is " + str(score))
 
 ## 5. Ignoruj velikost písmen a přidej pokusy
 
-Na straně 41 se projekt rozšíří tak, aby hráč dostal tři pokusy a aby nezáleželo na velkých a malých písmenech.
+ Projekt rozšíříme tak, aby hráč dostal tři pokusy a aby nezáleželo na velikosti písmen
 
 ```python title="code/03_attempts.py" linenums="1"
 score = 0
@@ -163,9 +163,9 @@ guess = input("How many hearts does an octopus have? ")
 check_guess(guess, "three")
 ```
 
-### Vytvoř otázku s možnostmi
+### Vytvoř otázku s více možnostmi odpovědí
 
-U otázky s více možnostmi hráč neodpovídá celým slovem, ale písmenem. Program potom kontroluje, jestli hráč zadal správnou možnost.
+U otázky s více možnostmi odpovědí hráč neodpovídá celým slovem, ale písmenem. Program potom kontroluje, jestli hráč zadal správnou možnost.
 
 ```python
 guess = input("Which one of these is a fish? A) Whale B) Dolphin C) Shark D) Squid. Type A, B, C, or D ")
@@ -255,14 +255,13 @@ Zvířata jsou jen začátek. Stejný program můžeš použít pro kvíz o spor
 
 ## Co už umím
 
-- [ ] umím založit projektový soubor
-- [ ] umím sledovat skóre
-- [ ] umím napsat funkci pro kontrolu odpovědi
-- [ ] umím zavolat funkci s různými otázkami
-- [ ] umím použít `.lower()`
-- [ ] umím přidat omezený počet pokusů
+- [ ] ukládat skóre do proměnné
+- [ ] napsat funkci pro kontrolu odpovědi
+- [ ] volat funkci s různými argumenty
+- [ ] porovnávat text bez ohledu na velikost písmen
+- [ ] omezit počet pokusů hráče
 
 ## Shrnutí
 
 !!! success "Zapamatuj si"
-    Animal Quiz roste po malých krocích. Nejprve má otázky a skóre, potom funkci pro kontrolu, potom výpis skóre, ignorování velikosti písmen a nakonec více pokusů.
+    Programy nevznikají najednou. Přidáváním malých a otestovaných změn můžeš postupně vytvořit i složitější aplikaci.
