@@ -45,21 +45,20 @@ nav:
       - 1. Vývojové prostředí: 01-vyvojove-prostredi/index.md
       - 2. První program: 02-prvni-program/index.md
       - 3. Proměnné: 03-promenne-a-vstup/index.md
-      - 4. Řetězce a seznamy: 04-retezce-a-seznamy/index.md
-      - 5. Rozhodování: 05-rozhodovani/index.md
-      - 6. Cykly: 06-cykly/index.md
-      - 7. Projekt Zvířecí kvíz: 07-zvireci-kviz/index.md
-      - 8. Funkce: 08-funkce/index.md
-      - 9. Hledání a oprava chyb: 09-oprava-chyb/index.md
-      - 10. Projekt Generátor hesel: 10-generator-hesel/index.md
-      - 11. Moduly: 11-moduly/index.md
-      - 12. Projekt Devět životů: 12-devet-zivotu/index.md
+      - 4. Rozhodování: 04-rozhodovani/index.md
+      - 5. Cykly: 05-cykly/index.md
+      - 6. Projekt Zvířecí kvíz: 06-zvireci-kviz/index.md
+      - 7. Funkce: 07-funkce/index.md
+      - 8. Hledání a oprava chyb: 08-oprava-chyb/index.md
+      - 9. Projekt Generátor hesel: 09-generator-hesel/index.md
+      - 10. Moduly: 10-moduly/index.md
+      - 11. Projekt Devět životů: 11-devet-zivotu/index.md
   - Turtle Graphics:
-      - 13. Úvod do Turtle: 13-turtle-uvod/index.md
-      - 14. Projekt Stavitel robota: 14-stavitel-robota/index.md
-      - 15. Projekt Kaleido-spirála: 15-kaleido-spirala/index.md
-      - 16. Projekt Hvězdná noc: 16-hvezdna-noc/index.md
-      - 17. Projekt Mutantní duha: 17-mutantni-duha/index.md
+      - 12. Úvod do Turtle: 12-turtle-uvod/index.md
+      - 13. Projekt Stavitel robota: 13-stavitel-robota/index.md
+      - 14. Projekt Kaleido-spirála: 14-kaleido-spirala/index.md
+      - 15. Projekt Hvězdná noc: 15-hvezdna-noc/index.md
+      - 16. Projekt Mutantní duha: 16-mutantni-duha/index.md
 
 markdown_extensions:
   - admonition
